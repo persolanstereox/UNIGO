@@ -1,6 +1,6 @@
 export default function StartStudying() {
     return(
-        <h1>Start studying</h1>
+        <h1>Info</h1>
     )
 }
 
