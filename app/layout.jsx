@@ -12,13 +12,13 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en" >
       <body className={`${poppins.className}`}>
-        <nav className="flex justify-between">
+        <nav className="flex justify-between h-1/4">
           <Image
             src="/unigo-logo.png"
             width={400}
-            height={200}
+            height={50}
             alt="Logo"
-            className="ml-8"
+            className="ml-8 h-36"
           />
           <ul className="flex mr-16">
             <li className=" flex items-center mx-11">

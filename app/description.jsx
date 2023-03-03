@@ -1,6 +1,6 @@
 function Description() {
   return (
-    <section>
+    <section className="h-2/4">
       <div className="ml-32">
         <span className="text-sky-600 text-2xl">
           Combine your
