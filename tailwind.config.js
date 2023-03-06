@@ -29,7 +29,12 @@ module.exports = {
         '3xl': '3rem',
         '4xl': '4rem',
         '5xl': '5rem',
+      },
+      spacing: {
+        '128': '32rem',
+        '144': '36rem',
       }
+      
     },
   },
   plugins: [],
