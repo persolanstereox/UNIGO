@@ -1,10 +1,11 @@
 import TitleButton from "./TitleButton";
-import data from "test-data/cities.json"
+import Titles from "test-data/titles.json"
 function TitleButtonContainer() {
 return(
     <div>
-        {data.map(button => (
-            <TitleButton key={button.id} dane={button.text}/>
+        <span>Target Title</span>
+        {Titles.titles.map(button => (
+            <TitleButton key={button.id} data={button.title}/>
         ))}
     </div>
 )

@@ -1,18 +1,18 @@
-import data from "test-data/cities.json";
+// import data from "test-data/cities.json";
 
 function List(props) {
-  const filterCities = data.filter((city) => {
-    if (props.cityName === "") {
-      return city;
+  const filterSearches = props.data.filter((search) => {
+    if (props.searchName === "") {
+      return search;
     } else {
-      return city.text.toLowerCase().includes(props.cityName);
+      return search.name.toLowerCase().includes(props.searchName);
     }
   });
 
   return (
     <ul>
-      {filterCities.map((city) => (
-        <li key={city.id}>{city.text}</li>
+      {filterSearches.map((search) => (
+        <li key={search.id}>{search.name}</li>
       ))}
     </ul>
   );

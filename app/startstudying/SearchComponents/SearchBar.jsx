@@ -2,21 +2,21 @@
 import { useState } from "react";
 import List from "./List";
 
-const SearchBar = () => {
+const SearchBar = (props) => {
 
-  const [city, setCity] = useState("");
+  const [search, setSearch] = useState("");
 
-  let CityHandler = (e) => {
-    setCity(e.target.value.toLowerCase())
+  let SearchHandler = (e) => {
+    setSearch(e.target.value.toLowerCase())
     console.log(e.target.value)
   }
 
 
   return (
     <div className="flex">
-      <label htmlFor="cities">City</label>
-      <input onChange={CityHandler} type="text" id="cities" />
-      <List cityName={city}/>
+      <label htmlFor={props.id}>{props.label}</label>
+      <input onChange={SearchHandler} type="text" id={props.id} />
+      <List searchName={search} data={props.data}/>
     </div>
   );
 };

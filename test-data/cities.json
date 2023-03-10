@@ -1,31 +1,42 @@
-[{
+[
+  {
     "id": 1,
-    "text": "Gdańsk"
-}, {
+    "name": "Gdańsk"
+  },
+  {
     "id": 2,
-    "text": "Warszawa"
-}, {
+    "name": "Warszawa"
+  },
+  {
     "id": 3,
-    "text": "Poznań"
-}, {
+    "name": "Poznań"
+  },
+  {
     "id": 4,
-    "text": "Wrocław"
-}, {
+    "name": "Wrocław"
+  },
+  {
     "id": 5,
-    "text": "Kraków"
-}, {
+    "name": "Kraków"
+  },
+  {
     "id": 6,
-    "text": "Katowice"
-}, {
+    "name": "Katowice"
+  },
+  {
     "id": 7,
-    "text": "Białystok"
-}, {
+    "name": "Białystok"
+  },
+  {
     "id": 8,
-    "text": "Gdynia"
-}, {
+    "name": "Gdynia"
+  },
+  {
     "id": 9,
-    "text": "Olsztyn"
-}, {
+    "name": "Olsztyn"
+  },
+  {
     "id": 10,
-    "text": "Łodź"
-}] 
+    "name": "Łodź"
+  }
+]
