@@ -1,7 +1,22 @@
 "use client";
 // import data from "test-data/cities.json";
+import Select from 'react-select';
+import makeAnimated from 'react-select/animated';
 
 function List(props) {
+
+  const animatedComponents = makeAnimated();
+
+  const options = [
+    { value: 'chocolate', label: 'Chocolate' },
+    { value: 'strawberry', label: 'Strawberry' },
+    { value: 'vanilla', label: 'Vanilla' }
+  ]
+
+
+
+
+
   const filterSearches = props.data.filter((search) => {
     if (props.searchName === "") {
       return search;
@@ -32,6 +47,13 @@ function List(props) {
           ))}
         </ul>
       )}
+      <Select
+      closeMenuOnSelect={false}
+      components={animatedComponents}
+      defaultValue={[options[0], options[2]]}
+      isMulti
+      options={options}
+    />
     </>
   );
 }

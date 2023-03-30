@@ -3,6 +3,7 @@ import { useState } from "react";
 import List from "./List";
 
 const SearchBar = (props) => {
+ 
   // const [search, setSearch] = useState("");
 
   // let SearchHandler = (e) => {
@@ -14,8 +15,8 @@ const SearchBar = (props) => {
   const [focus, setFocus] = useState(false);
 
   const focusHandler = () => {
-    setFocus(true)
-  }
+    setFocus(true);
+  };
 
   return (
     <div>
@@ -29,7 +30,6 @@ const SearchBar = (props) => {
         name={props.id}
         placeholder="Search"
         className=" block p-2.5 w-full z-20 text-sm text-gray-900 bg-gray-50 rounded-r-lg border-l-gray-50 border-l-2 border border-gray-300"
-        
       />
       <List
         searchName={props.search}
@@ -37,6 +37,7 @@ const SearchBar = (props) => {
         focus={focus}
         removeList={() => setFocus(false)}
       />
+      
     </div>
   );
 };

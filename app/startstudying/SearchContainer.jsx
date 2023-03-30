@@ -41,16 +41,6 @@ const SearchContainer = () => {
 
   };
 
-  // const test = (e) => {
-  //   e.preventDefault();
-  //   console.log(inputCity)
-  //   setFormData({
-  //     cities: inputCity.value,
-  //     subjects: inputSubjects.value
-      
-  //   })
-  //   console.log(formData);
-  // }
 
 
   const getFormData = (e) => {
