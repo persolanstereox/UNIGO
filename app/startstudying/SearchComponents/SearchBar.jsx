@@ -36,6 +36,7 @@ const SearchBar = (props) => {
         data={props.data}
         focus={focus}
         removeList={() => setFocus(false)}
+        listButtonsFunctionality={props.listButtonsFunctionality}
       />
       
     </div>

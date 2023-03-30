@@ -16,37 +16,59 @@ const SearchContainer = () => {
   //     // props.onChange();
   //     console.log(e.target.value)
   //   }
+  const [focus, setFocus] = useState(false);
 
   const [formData, setFormData] = useState({
     cities: "",
     subjects: "",
+    title: "",
+    engLevel: "",
   });
 
-  
   const handleFormData = (e) => {
-
     setFormData({
       ...formData,
       [e.target.name]: e.target.value.trim(),
     });
-    
+
     setSearch(e.target.value.toLowerCase());
-    
+
     console.log(e.target.value);
 
     // setSearch({
     //     [e.target.name]: e.target.value.toLowerCase()
     // });
-   
-
   };
 
+  const handleFormDataByButtons = (e) => {
+    e.preventDefault();
+    let input = e.target.closest("ul").previousSibling;
+    input.value = e.target.value;
 
+    setFormData({
+      ...formData,
+      [input.name]: e.target.value,
+    });
+
+    // setFocus(true)
+
+    // props.removeList();
+  };
+
+  const handleButtonsValue = (e) => {
+    e.preventDefault();
+    let button = e.target.closest("button");
+
+    setFormData({
+      ...formData,
+      [button.name]: button.value,
+    });
+  };
 
   const getFormData = (e) => {
     e.preventDefault();
-    
-    console.log(e.target.closest('form'))
+
+    console.log(e.target.closest("form"));
     console.log(formData);
   };
 
@@ -59,20 +81,23 @@ const SearchContainer = () => {
           label={"Cities"}
           id={"cities"}
           onChange={handleFormData}
+          listButtonsFunctionality={handleFormDataByButtons}
+          // settingFocus={setFocus}
           search={search}
         />
         <Divider />
-        <TitleButtonContainer />
+        <TitleButtonContainer onClick={handleButtonsValue} />
         <Divider />
         <SearchBar
           data={subjects}
           label={"Desired study subjects"}
           id={"subjects"}
           onChange={handleFormData}
+          listButtonsFunctionality={handleFormDataByButtons}
           search={search}
         />
         <Divider />
-        <EnglishLevelButtonContainer />
+        <EnglishLevelButtonContainer onClick={handleButtonsValue} />
         <Divider />
         <Submit onClick={getFormData} />
       </form>

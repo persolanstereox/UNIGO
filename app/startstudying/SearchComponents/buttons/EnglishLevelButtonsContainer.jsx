@@ -2,11 +2,11 @@
 import EnglishLevelButton from "./EnglishLevelButton";
 import Levels from "test-data/englishLevel.json";
 
-function EnglishLevelButtonContainer() {
-  const saveValue = (e) => {
-    e.preventDefault();
-    console.log(e.target.closest("button").value);
-  };
+function EnglishLevelButtonContainer(props) {
+  // const saveValue = (e) => {
+  //   e.preventDefault();
+  //   console.log(e.target.closest("button").value);
+  // };
 
   return (
     <div className=" flex flex-col">
@@ -14,7 +14,7 @@ function EnglishLevelButtonContainer() {
       <div className="flex">
         {Levels.levelOfEnglish.map((button) => (
           <EnglishLevelButton
-            onClick={saveValue}
+            onClick={props.onClick}
             key={button.id}
             name={button.name}
             englishLevel={button.level}
