@@ -1,3 +1,4 @@
+"use client";
 // import data from "test-data/cities.json";
 
 function List(props) {
@@ -9,12 +10,29 @@ function List(props) {
     }
   });
 
+  const GiveButtonValue = (e) => {
+    e.preventDefault();
+    e.target.closest("ul").previousSibling.value = e.target.value;
+    console.log(e.target.closest("ul").previousSibling);
+    console.log(e.target.closest("ul").previousSibling.value);
+    
+    props.removeList();
+  };
+
   return (
-    <ul>
-      {filterSearches.map((search) => (
-        <li key={search.id}>{search.name}</li>
-      ))}
-    </ul>
+    <>
+      {props.focus && (
+        <ul className="h-auto bg-slate-300 ">
+          {filterSearches.map((search) => (
+            <li className="p-1.5" key={search.id}>
+              <button onClick={GiveButtonValue} value={search.name}>
+                {search.name}
+              </button>
+            </li>
+          ))}
+        </ul>
+      )}
+    </>
   );
 }
 export default List;
