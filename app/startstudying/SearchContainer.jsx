@@ -11,12 +11,8 @@ import { useState } from "react";
 const SearchContainer = () => {
   const [search, setSearch] = useState("");
 
-  //   let SearchHandler = (e) => {
-  //     setSearch(e.target.value.toLowerCase())
-  //     // props.onChange();
-  //     console.log(e.target.value)
-  //   }
   const [focus, setFocus] = useState(false);
+
 
   const [formData, setFormData] = useState({
     cities: "",
@@ -34,14 +30,21 @@ const SearchContainer = () => {
     setSearch(e.target.value.toLowerCase());
 
     console.log(e.target.value);
-
-    // setSearch({
-    //     [e.target.name]: e.target.value.toLowerCase()
-    // });
+  };
+  
+  const handleFocus = () => {
+    if (!focus) {
+      setFocus(true);
+    } else {
+      setFocus(false);
+    }
   };
 
+  
   const handleFormDataByButtons = (e) => {
     e.preventDefault();
+    
+    console.log(e.target)
     let input = e.target.closest("ul").previousSibling;
     input.value = e.target.value;
 
@@ -51,7 +54,8 @@ const SearchContainer = () => {
     });
 
     // setFocus(true)
-
+    handleFocus(e);
+    console.log(focus)
     // props.removeList();
   };
 
@@ -82,7 +86,8 @@ const SearchContainer = () => {
           id={"cities"}
           onChange={handleFormData}
           listButtonsFunctionality={handleFormDataByButtons}
-          // settingFocus={setFocus}
+          focus={focus}
+          settingFocus={handleFocus}
           search={search}
         />
         <Divider />
@@ -94,6 +99,8 @@ const SearchContainer = () => {
           id={"subjects"}
           onChange={handleFormData}
           listButtonsFunctionality={handleFormDataByButtons}
+          focus={focus}
+          settingFocus={handleFocus}
           search={search}
         />
         <Divider />

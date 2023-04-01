@@ -35,7 +35,7 @@ function List(props) {
         <ul className="h-auto bg-slate-300 ">
           {filterSearches.map((search) => (
             <li className="p-1.5" key={search.id}>
-              <button onClick={props.listButtonsFunctionality} value={search.name}>
+              <button onClick={props.listButtonsFunctionality} value={search.name} name={search.type}>
                 {search.name}
               </button>
             </li>

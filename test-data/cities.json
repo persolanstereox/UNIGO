@@ -1,42 +1,52 @@
 [
   {
     "id": 1,
-    "name": "Gdańsk"
+    "name": "Gdańsk",
+    "type": "city"
   },
   {
     "id": 2,
-    "name": "Warszawa"
+    "name": "Warszawa",
+    "type": "city"
   },
   {
     "id": 3,
-    "name": "Poznań"
+    "name": "Poznań",
+    "type": "city"
   },
   {
     "id": 4,
-    "name": "Wrocław"
+    "name": "Wrocław",
+    "type": "city"
   },
   {
     "id": 5,
-    "name": "Kraków"
+    "name": "Kraków",
+    "type": "city"
   },
   {
     "id": 6,
-    "name": "Katowice"
+    "name": "Katowice",
+    "type": "city"
   },
   {
     "id": 7,
-    "name": "Białystok"
+    "name": "Białystok",
+    "type": "city"
   },
   {
     "id": 8,
-    "name": "Gdynia"
+    "name": "Gdynia",
+    "type": "city"
   },
   {
     "id": 9,
-    "name": "Olsztyn"
+    "name": "Olsztyn",
+    "type": "city"
   },
   {
     "id": 10,
-    "name": "Łodź"
+    "name": "Łodź",
+    "type": "city"
   }
 ]
