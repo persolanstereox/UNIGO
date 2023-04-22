@@ -1,6 +1,6 @@
 "use client"
 import TitleButton from "./TitleButton";
-import Titles from "test-data/titles.json"
+import Titles from "@/test-data/titles.json"
 function TitleButtonContainer(props) {
 
     

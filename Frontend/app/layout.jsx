@@ -39,7 +39,7 @@ export default function RootLayout({ children }) {
                 className={` ${
                   home ? "underline" : ""
                 } hover:underline text-1.5xl`}
-                href="/"
+                href="/Users/Lukasz/IdeaProjects/UNIGO/Frontend/public"
               >
                 Home
               </Link>
