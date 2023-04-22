@@ -13,6 +13,10 @@ const SearchContainer = () => {
 
   const [focus, setFocus] = useState(false);
 
+  const handle = (h) => {
+    setFocus(h)
+  }
+
 
   const [formData, setFormData] = useState({
     cities: "",
@@ -32,13 +36,13 @@ const SearchContainer = () => {
     console.log(e.target.value);
   };
   
-  const handleFocus = () => {
-    if (!focus) {
-      setFocus(true);
-    } else {
-      setFocus(false);
-    }
-  };
+  // const handleFocus = () => {
+  //   if (!focus) {
+  //     setFocus(true);
+  //   } else {
+  //     setFocus(false);
+  //   }
+  // };
 
   
   const handleFormDataByButtons = (e) => {
@@ -54,8 +58,12 @@ const SearchContainer = () => {
     });
 
     // setFocus(true)
-    handleFocus(e);
-    console.log(focus)
+
+
+    // handleFocus();
+
+
+    // console.log(focus)
     // props.removeList();
   };
 
@@ -86,8 +94,9 @@ const SearchContainer = () => {
           id={"cities"}
           onChange={handleFormData}
           listButtonsFunctionality={handleFormDataByButtons}
-          focus={focus}
-          settingFocus={handleFocus}
+          // focus={focus}
+          // settingFocus={handleFocus}
+          test={handle}
           search={search}
         />
         <Divider />
@@ -99,8 +108,9 @@ const SearchContainer = () => {
           id={"subjects"}
           onChange={handleFormData}
           listButtonsFunctionality={handleFormDataByButtons}
-          focus={focus}
-          settingFocus={handleFocus}
+          test={handle}
+          // focus={focus}
+          // settingFocus={handleFocus}
           search={search}
         />
         <Divider />

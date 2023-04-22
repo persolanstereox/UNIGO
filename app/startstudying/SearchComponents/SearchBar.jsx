@@ -18,6 +18,12 @@ const SearchBar = (props) => {
   //   setFocus(true);
   // };
 
+  // const [focus, setFocus] = useState(false);
+
+  const hanndlingFocus = () => {
+    props.test(true)
+  }
+
 
 
   return (
@@ -25,7 +31,8 @@ const SearchBar = (props) => {
       <label htmlFor={props.id}>{props.label}</label>
       <input
         onChange={props.onChange}
-        onFocus={props.settingFocus}
+        // onFocus={props.settingFocus}
+        onFocus={hanndlingFocus}
         type="text"
         id={props.id}
         name={props.id}
