@@ -4,16 +4,30 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="c5c49085-2474-44fd-85e7-333becfcf646" name="Changes" comment="">
+    <list default="true" id="c5c49085-2474-44fd-85e7-333becfcf646" name="Changes" comment="added mongoDB connection">
+      <change afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/ug/unigo/UniGo/controller/UniversityController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/ug/unigo/UniGo/model/UniversityItem.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/ug/unigo/UniGo/repository/ItemRepository.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/ug/unigo/UniGo/service/ItemService.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ug/unigo/UniGo/UniGoApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ug/unigo/UniGo/UniGoApplication.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/application.properties" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Interface" />
+        <option value="Class" />
+      </list>
+    </option>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_BRANCH_BY_REPOSITORY">
@@ -44,14 +58,23 @@
   </component>
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
+    "RequestMappingsPanelOrder0": "0",
+    "RequestMappingsPanelOrder1": "1",
+    "RequestMappingsPanelWidth0": "75",
+    "RequestMappingsPanelWidth1": "75",
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
+    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
     "WebServerToolWindowFactoryState": "false",
     "last_opened_file_path": "C:/Users/Lukasz/IdeaProjects/UNIGO/Backend",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
     "node.js.selected.package.tslint": "(autodetect)",
+    "project.structure.last.edited": "Project",
+    "project.structure.proportion": "0.0",
+    "project.structure.side.proportion": "0.0",
+    "settings.editor.selected.configurable": "editor.preferences.fonts.default",
     "spring.configuration.checksum": "2e427c268ac1768b9add94b65e2d6c14"
   }
 }]]></component>
@@ -64,7 +87,8 @@
       </method>
     </configuration>
     <configuration name="UniGoApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot">
-      <module name="UniGo" />
+      <option name="ACTIVE_PROFILES" />
+      <module name="Backend" />
       <option name="SPRING_BOOT_MAIN_CLASS" value="ug.unigo.UniGo.UniGoApplication" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -81,8 +105,17 @@
       <updated>1682178378767</updated>
       <workItem from="1682178380049" duration="42000" />
       <workItem from="1682178676636" duration="38000" />
-      <workItem from="1682179002926" duration="1098000" />
+      <workItem from="1682179002926" duration="4481000" />
+      <workItem from="1682191782318" duration="3098000" />
     </task>
+    <task id="LOCAL-00001" summary="added mongoDB connection">
+      <created>1682180335791</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1682180335791</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -98,5 +131,13 @@
         </entry>
       </map>
     </option>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="added mongoDB connection" />
+    <option name="LAST_COMMIT_MESSAGE" value="added mongoDB connection" />
+  </component>
+  <component name="XSLT-Support.FileAssociations.UIState">
+    <expand />
+    <select />
   </component>
 </project>
