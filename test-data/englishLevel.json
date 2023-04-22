@@ -1,0 +1,34 @@
+{
+  "levelOfEnglish": [
+    {
+      "id": 1,
+      "name": "Beginner",
+      "level": "A1"
+    },
+    {
+      "id": 2,
+      "name": "Elementary",
+      "level": "A2"
+    },
+    {
+      "id": 3,
+      "name": "Indermediate",
+      "level": "B1"
+    },
+    {
+      "id": 4,
+      "name": "Upper Indermediate",
+      "level": "B2"
+    },
+    {
+      "id": 5,
+      "name": "Advanced",
+      "level": "C1"
+    },
+    {
+      "id": 6,
+      "name": "Proficient",
+      "level": "C2"
+    }
+  ]
+}

@@ -1,0 +1,48 @@
+[
+  {
+    "id": 1,
+    "name": "Programming",
+    "type": "subject"
+  },
+  {
+    "id": 2,
+    "name": "Databases",
+    "type": "subject"
+  },
+  {
+    "id": 3,
+    "name": "Data Science",
+    "type": "subject"
+  },
+  {
+    "id": 4,
+    "name": "Data Analitics",
+    "type": "subject"
+  },
+  {
+    "id": 5,
+    "name": "Data Engineering",
+    "type": "subject"
+  },
+  {
+    "id": 6,
+    "name": "Mathematics",
+    "type": "subject"
+  },
+  
+  {
+    "id": 7,
+    "name": "Economy",
+    "type": "subject"
+  },
+  {
+    "id": 8,
+    "name": "Phisics",
+    "type": "subject"
+  },
+  {
+    "id": 9,
+    "name": "Transport",
+    "type": "subject"
+  }
+]

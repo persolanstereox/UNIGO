@@ -1,0 +1,52 @@
+[
+  {
+    "id": 1,
+    "name": "Gdańsk",
+    "type": "city"
+  },
+  {
+    "id": 2,
+    "name": "Warszawa",
+    "type": "city"
+  },
+  {
+    "id": 3,
+    "name": "Poznań",
+    "type": "city"
+  },
+  {
+    "id": 4,
+    "name": "Wrocław",
+    "type": "city"
+  },
+  {
+    "id": 5,
+    "name": "Kraków",
+    "type": "city"
+  },
+  {
+    "id": 6,
+    "name": "Katowice",
+    "type": "city"
+  },
+  {
+    "id": 7,
+    "name": "Białystok",
+    "type": "city"
+  },
+  {
+    "id": 8,
+    "name": "Gdynia",
+    "type": "city"
+  },
+  {
+    "id": 9,
+    "name": "Olsztyn",
+    "type": "city"
+  },
+  {
+    "id": 10,
+    "name": "Łodź",
+    "type": "city"
+  }
+]
