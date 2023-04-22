@@ -6,8 +6,6 @@ import org.springframework.web.bind.annotation.*;
 import ug.unigo.UniGo.model.UniversityItem;
 import ug.unigo.UniGo.service.ItemService;
 
-import java.util.List;
-
 @RestController
 @CrossOrigin
 @RequestMapping("/api")
@@ -19,14 +17,26 @@ public class UniversityController {
         this.universityService=universityService;
     }
 
-    @GetMapping("/items")
-    public List<UniversityItem> getAllItems() {
+    @GetMapping("/universities")
+    public Iterable<UniversityItem> getAllItems() {
         return universityService.findAllItems();
     }
 
-    @PostMapping("/items")
+    @PostMapping("/universities")
     public ResponseEntity<UniversityItem> createUniversityItem(@RequestBody UniversityItem universityItem) {
         UniversityItem returnUniversityItem = universityService.createItem(universityItem);
-        return new ResponseEntity<UniversityItem>(returnUniversityItem, HttpStatus.CREATED);
+        return new ResponseEntity<>(returnUniversityItem, HttpStatus.CREATED);
+    }
+
+    @DeleteMapping("/deleteUniversity")
+    public  ResponseEntity<UniversityItem> deleteUniversityItem(@RequestBody UniversityItem universityItem) {
+        universityService.deleteItemById(universityItem.getId());
+        return new ResponseEntity<>(HttpStatus.OK);
+    }
+
+    @PutMapping("/editUniversity")
+    public ResponseEntity<UniversityItem> editUniversityItem(@RequestBody UniversityItem universityItem) {
+        UniversityItem returnUniversityItem = universityService.editItem(universityItem.getId(), universityItem);
+        return new ResponseEntity<>(returnUniversityItem, HttpStatus.OK);
     }
 }
