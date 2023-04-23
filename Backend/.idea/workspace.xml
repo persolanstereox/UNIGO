@@ -4,57 +4,33 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="c5c49085-2474-44fd-85e7-333becfcf646" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/HELP.md" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/mvnw" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/mvnw.cmd" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../app/api/hello/route.js" beforeDir="false" afterPath="$PROJECT_DIR$/../Frontend/app/api/hello/route.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../app/description.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/../Frontend/app/description.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../app/globals.css" beforeDir="false" afterPath="$PROJECT_DIR$/../Frontend/app/globals.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../app/layout.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/../Frontend/app/layout.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../app/mainButtons.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/../Frontend/app/mainButtons.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../app/page.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/../Frontend/app/page.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../app/page.module.css" beforeDir="false" afterPath="$PROJECT_DIR$/../Frontend/app/page.module.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../app/readmore/page.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/../Frontend/app/readmore/page.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../app/socialMedia.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/../Frontend/app/socialMedia.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../app/startSection.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/../Frontend/app/startSection.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../app/startstudying/MainDivider.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/../Frontend/app/startstudying/MainDivider.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../app/startstudying/SearchComponents/List.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/../Frontend/app/startstudying/SearchComponents/List.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../app/startstudying/SearchComponents/SearchBar.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/../Frontend/app/startstudying/SearchComponents/SearchBar.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../app/startstudying/SearchComponents/buttons/EnglishLevelButton.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/../Frontend/app/startstudying/SearchComponents/buttons/EnglishLevelButton.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../app/startstudying/SearchComponents/buttons/EnglishLevelButtonsContainer.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/../Frontend/app/startstudying/SearchComponents/buttons/EnglishLevelButtonsContainer.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../app/startstudying/SearchComponents/buttons/Submit.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/../Frontend/app/startstudying/SearchComponents/buttons/Submit.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../app/startstudying/SearchComponents/buttons/TitleButton.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/../Frontend/app/startstudying/SearchComponents/buttons/TitleButton.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../app/startstudying/SearchComponents/buttons/TitleButtonsContainer.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/../Frontend/app/startstudying/SearchComponents/buttons/TitleButtonsContainer.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../app/startstudying/SearchComponents/divider.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/../Frontend/app/startstudying/SearchComponents/divider.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../app/startstudying/SearchContainer.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/../Frontend/app/startstudying/SearchContainer.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../app/startstudying/page.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/../Frontend/app/startstudying/page.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../jsconfig.json" beforeDir="false" afterPath="$PROJECT_DIR$/../Frontend/jsconfig.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../next.config.js" beforeDir="false" afterPath="$PROJECT_DIR$/../Frontend/next.config.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/../Frontend/package-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../package.json" beforeDir="false" afterPath="$PROJECT_DIR$/../Frontend/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../postcss.config.js" beforeDir="false" afterPath="$PROJECT_DIR$/../Frontend/postcss.config.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../public/instagram-icon.svg" beforeDir="false" afterPath="$PROJECT_DIR$/../Frontend/public/instagram-icon.svg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../public/man-icon.png" beforeDir="false" afterPath="$PROJECT_DIR$/../Frontend/public/man-icon.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../public/next.svg" beforeDir="false" afterPath="$PROJECT_DIR$/../Frontend/public/next.svg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../public/thirteen.svg" beforeDir="false" afterPath="$PROJECT_DIR$/../Frontend/public/thirteen.svg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../public/twitter-icon.svg" beforeDir="false" afterPath="$PROJECT_DIR$/../Frontend/public/twitter-icon.svg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../public/unigo-logo.png" beforeDir="false" afterPath="$PROJECT_DIR$/../Frontend/public/unigo-logo.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../public/vercel.svg" beforeDir="false" afterPath="$PROJECT_DIR$/../Frontend/public/vercel.svg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../tailwind.config.js" beforeDir="false" afterPath="$PROJECT_DIR$/../Frontend/tailwind.config.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../test-data/cities.json" beforeDir="false" afterPath="$PROJECT_DIR$/../Frontend/test-data/cities.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../test-data/englishLevel.json" beforeDir="false" afterPath="$PROJECT_DIR$/../Frontend/test-data/englishLevel.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../test-data/subjects.json" beforeDir="false" afterPath="$PROJECT_DIR$/../Frontend/test-data/subjects.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../test-data/titles.json" beforeDir="false" afterPath="$PROJECT_DIR$/../Frontend/test-data/titles.json" afterDir="false" />
+    <list default="true" id="c5c49085-2474-44fd-85e7-333becfcf646" name="Changes" comment="implemented CRUD operations for UniversityItem">
+      <change afterPath="$PROJECT_DIR$/src/main/java/ug/unigo/UniGo/model/SearchItem.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ug/unigo/UniGo/controller/UniversityController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ug/unigo/UniGo/controller/UniversityController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/ug/unigo/UniGo/controller/UniversityController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/ug/unigo/UniGo/controller/UniversityController.class" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Interface" />
+        <option value="Class" />
+      </list>
+    </option>
+  </component>
   <component name="Git.Settings">
+    <option name="RECENT_BRANCH_BY_REPOSITORY">
+      <map>
+        <entry key="$PROJECT_DIR$/.." value="main" />
+      </map>
+    </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
+    <option name="UPDATE_TYPE" value="REBASE" />
   </component>
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
@@ -75,14 +51,28 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "WebServerToolWindowFactoryState": "false",
-    "last_opened_file_path": "C:/Users/Lukasz/IdeaProjects/UNIGO"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;RequestMappingsPanelOrder0&quot;: &quot;0&quot;,
+    &quot;RequestMappingsPanelOrder1&quot;: &quot;1&quot;,
+    &quot;RequestMappingsPanelWidth0&quot;: &quot;75&quot;,
+    &quot;RequestMappingsPanelWidth1&quot;: &quot;75&quot;,
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
+    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/Lukasz/IdeaProjects/UNIGO/Backend&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;project.structure.last.edited&quot;: &quot;Project&quot;,
+    &quot;project.structure.proportion&quot;: &quot;0.0&quot;,
+    &quot;project.structure.side.proportion&quot;: &quot;0.0&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;editor.preferences.fonts.default&quot;,
+    &quot;spring.configuration.checksum&quot;: &quot;2e427c268ac1768b9add94b65e2d6c14&quot;
   }
-}]]></component>
+}</component>
   <component name="RunManager" selected="Spring Boot.UniGoApplication">
     <configuration name="UniGoApplication (1)" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot">
       <module name="Backend" />
@@ -92,7 +82,8 @@
       </method>
     </configuration>
     <configuration name="UniGoApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot">
-      <module name="UniGo" />
+      <option name="ACTIVE_PROFILES" />
+      <module name="Backend" />
       <option name="SPRING_BOOT_MAIN_CLASS" value="ug.unigo.UniGo.UniGoApplication" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -109,7 +100,18 @@
       <updated>1682178378767</updated>
       <workItem from="1682178380049" duration="42000" />
       <workItem from="1682178676636" duration="38000" />
+      <workItem from="1682179002926" duration="4481000" />
+      <workItem from="1682191782318" duration="3098000" />
+      <workItem from="1682237828813" duration="2970000" />
     </task>
+    <task id="LOCAL-00001" summary="added mongoDB connection">
+      <created>1682180335791</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1682180335791</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -125,5 +127,13 @@
         </entry>
       </map>
     </option>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="added mongoDB connection" />
+    <option name="LAST_COMMIT_MESSAGE" value="added mongoDB connection" />
+  </component>
+  <component name="XSLT-Support.FileAssociations.UIState">
+    <expand />
+    <select />
   </component>
 </project>
