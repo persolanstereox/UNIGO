@@ -14,12 +14,17 @@ public class UniversityController {
     private final ItemService universityService;
 
     public UniversityController(ItemService universityService) {
-        this.universityService=universityService;
+        this.universityService = universityService;
     }
 
     @GetMapping("/universities")
     public Iterable<UniversityItem> getAllItems() {
         return universityService.findAllItems();
+    }
+
+    @GetMapping("/university/{id}")
+    public ResponseEntity<UniversityItem> getItemById(@PathVariable String id) {
+        return universityService.getItemById(id);
     }
 
     @PostMapping("/universities")
@@ -28,8 +33,8 @@ public class UniversityController {
         return new ResponseEntity<>(returnUniversityItem, HttpStatus.CREATED);
     }
 
-    @DeleteMapping("/deleteUniversity")
-    public  ResponseEntity<UniversityItem> deleteUniversityItem(@RequestBody UniversityItem universityItem) {
+    @DeleteMapping("/deleteUniversity/{id}")
+    public ResponseEntity<UniversityItem> deleteUniversityItem(@RequestBody UniversityItem universityItem) {
         universityService.deleteItemById(universityItem.getId());
         return new ResponseEntity<>(HttpStatus.OK);
     }
