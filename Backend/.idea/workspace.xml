@@ -5,10 +5,15 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="c5c49085-2474-44fd-85e7-333becfcf646" name="Changes" comment="implemented CRUD operations for UniversityItem">
-      <change afterPath="$PROJECT_DIR$/src/main/java/ug/unigo/UniGo/model/SearchItem.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/../.gitignore" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/ug/unigo/UniGo/controller/UniversityController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ug/unigo/UniGo/controller/UniversityController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ug/unigo/UniGo/service/ItemService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ug/unigo/UniGo/service/ItemService.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/ug/unigo/UniGo/controller/UniversityController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/ug/unigo/UniGo/controller/UniversityController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Frontend/app/layout.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/../Frontend/app/layout.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Frontend/app/startstudying/SearchComponents/buttons/EnglishLevelButtonsContainer.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/../Frontend/app/startstudying/SearchComponents/buttons/EnglishLevelButtonsContainer.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Frontend/app/startstudying/SearchComponents/buttons/TitleButtonsContainer.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/../Frontend/app/startstudying/SearchComponents/buttons/TitleButtonsContainer.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Frontend/app/startstudying/SearchContainer.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/../Frontend/app/startstudying/SearchContainer.jsx" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -73,7 +78,37 @@
     &quot;spring.configuration.checksum&quot;: &quot;2e427c268ac1768b9add94b65e2d6c14&quot;
   }
 }</component>
-  <component name="RunManager" selected="Spring Boot.UniGoApplication">
+  <component name="RunManager" selected="JUnit.UniversityItemValidationTests">
+    <configuration name="UniversityItemRepositoryTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="Backend" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="ug.unigo.UniGo.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="ug.unigo.UniGo" />
+      <option name="MAIN_CLASS_NAME" value="ug.unigo.UniGo.UniversityItemRepositoryTest" />
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="UniversityItemValidationTests" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="Backend" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="ug.unigo.UniGo.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="ug.unigo.UniGo" />
+      <option name="MAIN_CLASS_NAME" value="ug.unigo.UniGo.UniversityItemValidationTests" />
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="UniGoApplication (1)" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot">
       <module name="Backend" />
       <option name="SPRING_BOOT_MAIN_CLASS" value="ug.unigo.UniGo.UniGoApplication" />
@@ -89,6 +124,12 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="JUnit.UniversityItemValidationTests" />
+        <item itemvalue="JUnit.UniversityItemRepositoryTest" />
+      </list>
+    </recent_temporary>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
@@ -103,6 +144,7 @@
       <workItem from="1682179002926" duration="4481000" />
       <workItem from="1682191782318" duration="3098000" />
       <workItem from="1682237828813" duration="2970000" />
+      <workItem from="1682495808436" duration="778000" />
     </task>
     <task id="LOCAL-00001" summary="added mongoDB connection">
       <created>1682180335791</created>

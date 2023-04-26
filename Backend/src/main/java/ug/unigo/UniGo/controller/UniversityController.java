@@ -1,8 +1,5 @@
 package ug.unigo.UniGo.controller;
 
-import org.springframework.data.mongodb.core.MongoTemplate;
-import org.springframework.data.mongodb.core.query.Criteria;
-import org.springframework.data.mongodb.core.query.Query;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
@@ -16,11 +13,9 @@ import ug.unigo.UniGo.service.ItemService;
 public class UniversityController {
 
     private final ItemService universityService;
-    private final MongoTemplate mongoTemplate;
 
-    public UniversityController(ItemService universityService, MongoTemplate mongoTemplate) {
+    public UniversityController(ItemService universityService) {
         this.universityService = universityService;
-        this.mongoTemplate = mongoTemplate;
     }
 
     @GetMapping("/universities")
@@ -35,17 +30,7 @@ public class UniversityController {
 
     @GetMapping("/universities/filter")
     public Iterable<UniversityItem> filterUniversities(@RequestBody SearchItem searchItem) {
-        Query query = new Query();
-        if(searchItem.getCities() != null && !searchItem.getCities().isEmpty()) {
-            query.addCriteria(Criteria.where("city").in(searchItem.getCities()));
-        }
-        if(searchItem.getTitle() != null) {
-            query.addCriteria(Criteria.where("title").is(searchItem.getTitle()));
-        }
-        if(searchItem.getInterests() != null && !searchItem.getInterests().isEmpty()) {
-            query.addCriteria(Criteria.where("interests").in(searchItem.getInterests()));
-        }
-        return mongoTemplate.find(query, UniversityItem.class);
+        return universityService.filterItems(searchItem);
     }
 
     @PostMapping("/universities")
