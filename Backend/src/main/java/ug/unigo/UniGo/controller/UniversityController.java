@@ -5,6 +5,7 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 import ug.unigo.UniGo.model.SearchItem;
 import ug.unigo.UniGo.model.UniversityItem;
+import ug.unigo.UniGo.model.UniversityItemDto;
 import ug.unigo.UniGo.service.ItemService;
 
 @RestController
@@ -29,7 +30,7 @@ public class UniversityController {
     }
 
     @GetMapping("/universities/filter")
-    public Iterable<UniversityItem> filterUniversities(@RequestBody SearchItem searchItem) {
+    public Iterable<UniversityItemDto> filterUniversities(@RequestBody SearchItem searchItem) {
         return universityService.filterItems(searchItem);
     }
 
