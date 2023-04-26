@@ -12,7 +12,7 @@ Autorzy:
 
 Warunki licencyjne do oprogramowania wytworzonego przez grupę: **Licencja wyłącznej własności**
 
-## Tecnologie
+## Technologie
 - Java 20
 - Spring (Boot, Data)
 - Hibernate
