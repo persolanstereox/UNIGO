@@ -12,6 +12,15 @@ Autorzy:
 
 Warunki licencyjne do oprogramowania wytworzonego przez grupę: **Licencja wyłącznej własności**
 
+## Tecnologie
+- Java 20
+- Spring (Boot, Data)
+- Hibernate
+- React
+- Next.js
+- MongoDB
+- Tailwind
+
 ## Specyfikacja wymagań
 
 - Identyfikator
