@@ -70,4 +70,6 @@ public class UniversityItemRepositoryTest {
 
         assertEquals(1, countBeforeDelete - countAfterDelete);
     }
+
+
 }

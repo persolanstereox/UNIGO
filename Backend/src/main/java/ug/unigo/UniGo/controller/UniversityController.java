@@ -5,7 +5,10 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 import ug.unigo.UniGo.model.SearchItem;
 import ug.unigo.UniGo.model.UniversityItem;
+import ug.unigo.UniGo.model.UniversityItemDto;
 import ug.unigo.UniGo.service.ItemService;
+
+import java.util.List;
 
 @RestController
 @CrossOrigin
@@ -19,35 +22,42 @@ public class UniversityController {
     }
 
     @GetMapping("/universities")
-    public Iterable<UniversityItem> getAllItems() {
-        return universityService.findAllItems();
+    public List<UniversityItem> getAllUniversityItems() {
+        return (List<UniversityItem>) universityService.findAllItems();
     }
 
     @GetMapping("/university/{id}")
-    public ResponseEntity<UniversityItem> getItemById(@PathVariable String id) {
-        return universityService.getItemById(id);
+    public ResponseEntity<UniversityItem> getUniversityItemById(@PathVariable String id) {
+        UniversityItem universityItem = universityService.getItemById(id).getBody();
+        if (universityItem == null) {
+            return new ResponseEntity<>(HttpStatus.NOT_FOUND);
+        }
+        return ResponseEntity.ok(universityItem);
     }
 
     @GetMapping("/universities/filter")
-    public Iterable<UniversityItem> filterUniversities(@RequestBody SearchItem searchItem) {
+    public Iterable<UniversityItemDto> filterUniversities(@RequestBody SearchItem searchItem) {
         return universityService.filterItems(searchItem);
     }
 
     @PostMapping("/universities")
     public ResponseEntity<UniversityItem> createUniversityItem(@RequestBody UniversityItem universityItem) {
-        UniversityItem returnUniversityItem = universityService.createItem(universityItem);
-        return new ResponseEntity<>(returnUniversityItem, HttpStatus.CREATED);
+        UniversityItem createdUniversityItem = universityService.createItem(universityItem);
+        return ResponseEntity.status(HttpStatus.CREATED).body(createdUniversityItem);
     }
 
-    @DeleteMapping("/deleteUniversity/{id}")
-    public ResponseEntity<UniversityItem> deleteUniversityItem(@RequestBody UniversityItem universityItem) {
-        universityService.deleteItemById(universityItem.getId());
-        return new ResponseEntity<>(HttpStatus.OK);
+    @DeleteMapping("/university/{id}")
+    public ResponseEntity<Void> deleteUniversityItem(@PathVariable String id) {
+        universityService.deleteItemById(id);
+        return ResponseEntity.ok().build();
     }
 
-    @PutMapping("/editUniversity")
-    public ResponseEntity<UniversityItem> editUniversityItem(@RequestBody UniversityItem universityItem) {
-        UniversityItem returnUniversityItem = universityService.editItem(universityItem.getId(), universityItem);
-        return new ResponseEntity<>(returnUniversityItem, HttpStatus.OK);
+    @PutMapping("/university/{id}")
+    public ResponseEntity<UniversityItem> editUniversityItem(@PathVariable String id, @RequestBody UniversityItem universityItem) {
+        UniversityItem updatedUniversityItem = universityService.editItem(id, universityItem);
+        if (updatedUniversityItem == null) {
+            return new ResponseEntity<>(HttpStatus.NOT_FOUND);
+        }
+        return ResponseEntity.ok(updatedUniversityItem);
     }
 }
