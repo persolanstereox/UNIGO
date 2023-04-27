@@ -16,7 +16,6 @@ import java.util.*;
 public class ItemService {
     private final ItemRepository universityItemRepository;
     private final MongoTemplate mongoTemplate;
-    private Query dbQuery;
 
 
     public ItemService(ItemRepository universityItemRepository, MongoTemplate mongoTemplate) {
@@ -33,7 +32,7 @@ public class ItemService {
     }
 
     public Iterable<UniversityItemDto> filterItems(SearchItem searchItem) {
-        dbQuery = new Query();
+        Query dbQuery = new Query();
         if(searchItem.getCities() != null && !searchItem.getCities().isEmpty()) {
             dbQuery.addCriteria(Criteria.where("city").in(searchItem.getCities()));
         }
