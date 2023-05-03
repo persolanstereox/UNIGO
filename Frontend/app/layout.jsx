@@ -14,12 +14,12 @@ const poppins = Poppins({
 export default function RootLayout({ children }) {
   let [home, setHome] = useState(true);
 
-  const handlerStartStudying = () => {
-    setHome(false)
-  };
-  const handlerHome = () => {
-    setHome(true)
-  }
+  // const handlerStartStudying = () => {
+  //   setHome(false)
+  // };
+  // const handlerHome = () => {
+  //   setHome(true)
+  // }
 
   return (
     <html lang="en">
@@ -35,7 +35,7 @@ export default function RootLayout({ children }) {
           <ul className="flex mr-16">
             <li className=" flex items-center mx-11">
               <Link
-                onClick={handlerHome}
+                onClick={() => setHome(prev => !prev)}
                 className={` ${
                   home ? "underline" : ""
                 } hover:underline text-1.5xl`}
@@ -46,7 +46,7 @@ export default function RootLayout({ children }) {
             </li>
             <li className=" flex items-center mx-11">
               <Link
-                onClick={handlerStartStudying}
+                onClick={() => setHome(prev => !prev)}
                 className={` ${
                   !home ? "underline" : ""
                 } hover:underline text-1.5xl`}
