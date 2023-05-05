@@ -4,23 +4,11 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="c5c49085-2474-44fd-85e7-333becfcf646" name="Changes" comment="update .gitignore">
-      <change afterPath="$PROJECT_DIR$/src/main/java/ug/unigo/UniGo/config/Encoder.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/ug/unigo/UniGo/config/JwtAuthenticationFilter.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/ug/unigo/UniGo/config/JwtTokenUtil.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/ug/unigo/UniGo/config/SecurityConfig.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/ug/unigo/UniGo/controller/AuthController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/ug/unigo/UniGo/model/User.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/ug/unigo/UniGo/model/UserLoginDto.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/ug/unigo/UniGo/model/UserRegistrationDto.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/ug/unigo/UniGo/repository/UserRepository.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/ug/unigo/UniGo/service/UserService.java" afterDir="false" />
+    <list default="true" id="c5c49085-2474-44fd-85e7-333becfcf646" name="Changes" comment="implementing Security and JWT, all users can use GET methods, but only admin can CREATE, UPDATE, DELETE, refactored the university Dto and filtering">
+      <change afterPath="$PROJECT_DIR$/src/main/java/ug/unigo/UniGo/service/AuthService.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/ug/unigo/UniGo/model/UniversityItemDto.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ug/unigo/UniGo/model/UniversityItemDto.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/ug/unigo/UniGo/service/ItemService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ug/unigo/UniGo/service/ItemService.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/ug/unigo/UniGo/service/ItemService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/ug/unigo/UniGo/service/ItemService.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/test-classes/ug/unigo/UniGo/UniGoApplicationTests.class" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -162,7 +150,7 @@
       <workItem from="1682621536004" duration="209000" />
       <workItem from="1683228779519" duration="7141000" />
       <workItem from="1683236559557" duration="979000" />
-      <workItem from="1683271556379" duration="1161000" />
+      <workItem from="1683271556379" duration="2099000" />
     </task>
     <task id="LOCAL-00001" summary="added mongoDB connection">
       <created>1682180335791</created>
@@ -185,7 +173,14 @@
       <option name="project" value="LOCAL" />
       <updated>1682547032184</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="implementing Security and JWT, all users can use GET methods, but only admin can CREATE, UPDATE, DELETE, refactored the university Dto and filtering">
+      <created>1683272918976</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1683272918976</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -225,7 +220,8 @@
     <MESSAGE value="added mongoDB connection" />
     <MESSAGE value="moved business logic of university filter method from controller to service" />
     <MESSAGE value="update .gitignore" />
-    <option name="LAST_COMMIT_MESSAGE" value="update .gitignore" />
+    <MESSAGE value="implementing Security and JWT, all users can use GET methods, but only admin can CREATE, UPDATE, DELETE, refactored the university Dto and filtering" />
+    <option name="LAST_COMMIT_MESSAGE" value="implementing Security and JWT, all users can use GET methods, but only admin can CREATE, UPDATE, DELETE, refactored the university Dto and filtering" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
