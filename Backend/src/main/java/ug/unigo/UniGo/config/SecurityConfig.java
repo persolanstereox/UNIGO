@@ -49,6 +49,7 @@ public class SecurityConfig {
 
         http.authorizeHttpRequests()
                 .requestMatchers("/auth/**").permitAll()
+                .requestMatchers(HttpMethod.POST, "/api/universities/filter").permitAll()
                 .requestMatchers(HttpMethod.POST, "/api/universities/**").hasAuthority("ADMIN")
                 .requestMatchers(HttpMethod.DELETE, "/api/universities/**").hasAuthority("ADMIN")
                 .requestMatchers(HttpMethod.DELETE, "/api/university/**").hasAuthority("ADMIN")
