@@ -13,4 +13,3 @@ function StartStudying() {
 }
 
 export default StartStudying;
-// border-4 border-indigo-500/100

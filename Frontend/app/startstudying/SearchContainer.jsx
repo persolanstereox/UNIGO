@@ -5,9 +5,10 @@ import SearchBar from "./SearchComponents/SearchBar";
 import FormButtonsContainer from "./SearchComponents/buttons/FormButtonsContainer";
 import Submit from "./SearchComponents/buttons/Submit";
 import cities from "@/Frontend/test-data/cities.json";
-import subjects from "@/Frontend/test-data/subjects.json";
+import interests from "@/Frontend/test-data/subjects.json";
 import titles from "@/Frontend/test-data/titles.json";
 import { useState } from "react";
+
 import axios from "axios";
 
 const SearchContainer = () => {
@@ -16,19 +17,18 @@ const SearchContainer = () => {
   const [citiesListFocus, setCitiesFocus] = useState(false);
   const [subjectsListFocus, setSubjectsFocus] = useState(false);
   const [activeButton, setActiveButton] = useState(null);
-  const [response, setResponse] = useState(null);
-
+  
   const [formData, setFormData] = useState({
-    cities: "",
-    subjects: "",
+    cities: [],
+    interests: [],
     title: "",
   });
-
   const handleFormData = (e) => {
     setFormData({
       ...formData,
-      [e.target.name]: e.target.value.trim(),
+      [e.target.name]: [e.target.value.trim()],
     });
+    
 
     setSearch(e.target.value.toLowerCase());
 
@@ -45,7 +45,7 @@ const SearchContainer = () => {
 
     setFormData({
       ...formData,
-      [input.name]: e.target.value,
+      [input.name]: [e.target.value],
     });
   };
 
@@ -64,20 +64,10 @@ const SearchContainer = () => {
   function handleSubmit(e) {
     e.preventDefault();
 
-    const requestBody = {
-      cities: ["Sopot"],
-      interests: ["Programming"],
-      title: "Bachelor",
-    };
+    const requestBody = formData;
 
     axios
-      .get("http://localhost:8080/api/universities/filter", requestBody, {
-        headers: {
-          "Content-Type": "application/json",
-          Authorization:
-            "Bearer eyJhbGciOiJIUzUxMiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiI2NDU0YjA3MzIzMWRlZDdkN2Y4NDhiYWYsdXNlciIsImlzcyI6ImF1dGgiLCJyb2xlcyI6WyJVU0VSIl0sImV4cCI6MTY4MzMwNDg4OH0.3YwuOmk_J1VX9987VOWYhwYG9cn8PnOPy-Ns9iS_uCfJ27empUb338clxixI_rpM0P-GISXB_tFfvSPSltV8VA",
-        },
-      })
+      .post("http://localhost:8080/api/universities/filter", requestBody)
       .then((response) => {
         console.log(response.data);
       })
@@ -105,8 +95,6 @@ const SearchContainer = () => {
           listButtonsFunctionality={handleFormDataByButtons}
           focusState={setCitiesFocus}
           focus={citiesListFocus}
-          // settingFocus={handleFocus}
-
           search={search}
         />
         <Divider />
@@ -117,29 +105,24 @@ const SearchContainer = () => {
         />
         <Divider />
         <SearchBar
-          data={subjects}
+          data={interests}
           label={"Desired study subjects"}
-          id={"subjects"}
+          id={"interests"}
           onChange={handleFormData}
           listButtonsFunctionality={handleFormDataByButtons}
           focusState={setSubjectsFocus}
           focus={subjectsListFocus}
-          // settingFocus={handleFocus}
           search={search}
         />
         <Divider />
         <Submit onClick={getFormData} />
-        <button type="submit">Test request</button>
-        {/* <div>
-          <Link
-            onClick={getFormData}
-            className="bg-slate-300 hover:bg-blue-700 text-white font-bold py-2 px-4 border border-blue-700 rounded"
-            href="/"
-            
-          >
-            Show Universities
-          </Link>
-        </div> */}
+        <button
+          type="submit"
+          
+        >
+          Test request
+        </button>
+        
       </form>
     </div>
   );
