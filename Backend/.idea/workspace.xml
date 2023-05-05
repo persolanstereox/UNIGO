@@ -4,11 +4,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="c5c49085-2474-44fd-85e7-333becfcf646" name="Changes" comment="implementing Security and JWT, all users can use GET methods, but only admin can CREATE, UPDATE, DELETE, refactored the university Dto and filtering">
-      <change afterPath="$PROJECT_DIR$/src/main/java/ug/unigo/UniGo/service/AuthService.java" afterDir="false" />
+    <list default="true" id="c5c49085-2474-44fd-85e7-333becfcf646" name="Changes" comment="improved filter method, now the universities are sorted by matchinginterests">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/ug/unigo/UniGo/service/ItemService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ug/unigo/UniGo/service/ItemService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/ug/unigo/UniGo/service/ItemService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/ug/unigo/UniGo/service/ItemService.class" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -150,7 +147,8 @@
       <workItem from="1682621536004" duration="209000" />
       <workItem from="1683228779519" duration="7141000" />
       <workItem from="1683236559557" duration="979000" />
-      <workItem from="1683271556379" duration="2099000" />
+      <workItem from="1683271556379" duration="2735000" />
+      <workItem from="1683301169077" duration="307000" />
     </task>
     <task id="LOCAL-00001" summary="added mongoDB connection">
       <created>1682180335791</created>
@@ -180,7 +178,14 @@
       <option name="project" value="LOCAL" />
       <updated>1683272918976</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="improved filter method, now the universities are sorted by matchinginterests">
+      <created>1683273892937</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1683273892937</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -221,7 +226,8 @@
     <MESSAGE value="moved business logic of university filter method from controller to service" />
     <MESSAGE value="update .gitignore" />
     <MESSAGE value="implementing Security and JWT, all users can use GET methods, but only admin can CREATE, UPDATE, DELETE, refactored the university Dto and filtering" />
-    <option name="LAST_COMMIT_MESSAGE" value="implementing Security and JWT, all users can use GET methods, but only admin can CREATE, UPDATE, DELETE, refactored the university Dto and filtering" />
+    <MESSAGE value="improved filter method, now the universities are sorted by matchinginterests" />
+    <option name="LAST_COMMIT_MESSAGE" value="improved filter method, now the universities are sorted by matchinginterests" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
