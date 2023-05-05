@@ -61,33 +61,31 @@ const SearchContainer = () => {
     setActiveButton(button.value);
   };
 
-  async function handleSubmit(e) {
+  function handleSubmit(e) {
     e.preventDefault();
-    // const requestBody = formData;
+
     const requestBody = {
       cities: ["Sopot"],
-      subjects: ["Programming"],
+      interests: ["Programming"],
       title: "Bachelor",
     };
-    console.log(requestBody)
 
-    // axios
-    //   .get("http://localhost:8080/api/universities/filter", requestBody)
-    //   .then((response) => {
-    //     setResponse(response.data);
-    //     console.log(response.data);
-    //   })
-    //   .catch((error) => console.error(error));
-    try {
-      const response = await axios.get(
-        "http://localhost:8080/api/universities/filter",
-        requestBody
-      );
-      console.log(response);
-    } catch (error) {
-      console.error(error);
-    }
+    axios
+      .get("http://localhost:8080/api/universities/filter", requestBody, {
+        headers: {
+          "Content-Type": "application/json",
+          Authorization:
+            "Bearer eyJhbGciOiJIUzUxMiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiI2NDU0YjA3MzIzMWRlZDdkN2Y4NDhiYWYsdXNlciIsImlzcyI6ImF1dGgiLCJyb2xlcyI6WyJVU0VSIl0sImV4cCI6MTY4MzMwNDg4OH0.3YwuOmk_J1VX9987VOWYhwYG9cn8PnOPy-Ns9iS_uCfJ27empUb338clxixI_rpM0P-GISXB_tFfvSPSltV8VA",
+        },
+      })
+      .then((response) => {
+        console.log(response.data);
+      })
+      .catch((err) => {
+        console.log(err);
+      });
   }
+
   const getFormData = (e) => {
     e.preventDefault();
 

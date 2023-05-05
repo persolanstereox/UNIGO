@@ -23,7 +23,7 @@ export default function RootLayout({ children }) {
 
   return (
     <html lang="en">
-      <body className={`${poppins.className}`}>
+      <body >
         <nav className="flex justify-between h-1/4">
           <Image
             src="/unigo-logo.png"
