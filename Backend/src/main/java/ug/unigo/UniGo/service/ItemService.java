@@ -11,6 +11,7 @@ import ug.unigo.UniGo.model.UniversityItemDto;
 import ug.unigo.UniGo.repository.ItemRepository;
 
 import java.util.*;
+import java.util.stream.Collectors;
 
 @Service
 public class ItemService {
@@ -27,40 +28,26 @@ public class ItemService {
         Optional<UniversityItem> item = universityItemRepository.findById(id);
         return item
                 .map(ResponseEntity::ok)
-                .orElse(ResponseEntity.notFound()
-                        .build());
+                .orElse(ResponseEntity
+                        .notFound()
+                        .build()
+                );
     }
 
     public Iterable<UniversityItemDto> filterItems(SearchItem searchItem) {
         Query dbQuery = new Query();
-        if(searchItem.getCities() != null && !searchItem.getCities().isEmpty()) {
-            dbQuery.addCriteria(Criteria.where("city").in(searchItem.getCities()));
-        }
-        if(searchItem.getTitle() != null) {
-            dbQuery.addCriteria(Criteria.where("title").is(searchItem.getTitle()));
-        }
 
-        List<UniversityItem> universities = mongoTemplate.find(dbQuery, UniversityItem.class);
+        Optional.ofNullable(searchItem.getCities())
+                .filter(cities -> !cities.isEmpty())
+                .ifPresent(cities -> dbQuery.addCriteria(Criteria.where("city").in(cities)));
 
-        List<UniversityItemDto> universityItemDtos = new ArrayList<>();
+        Optional.ofNullable(searchItem.getTitle())
+                .ifPresent(title -> dbQuery.addCriteria(Criteria.where("title").is(title)));
 
-        for (UniversityItem university : universities) {
-            int matchingInterests = getMatchingInterestCount(university.getInterests(), searchItem.getInterests());
-                UniversityItemDto universityItemDto = new UniversityItemDto(
-                        university.getUniversity(),
-                        university.getCity(),
-                        university.getFaculty(),
-                        university.getFieldOfStudy(),
-                        university.getTitle(),
-                        university.getWebsite(),
-                        university.getInterests(),
-                        university.getLogoURL(),
-                        matchingInterests
-                );
-                universityItemDtos.add(universityItemDto);
-        }
-
-        return universityItemDtos;
+        return mongoTemplate.find(dbQuery, UniversityItem.class)
+                .stream()
+                .map((UniversityItem university) -> mapToUniversityItemDto(university,searchItem))
+                .collect(Collectors.toList());
     }
 
     public Iterable<UniversityItem> findAllItems() {
@@ -92,6 +79,22 @@ public class ItemService {
 
     public void deleteItemById(String id) {
         universityItemRepository.deleteById(id);
+    }
+
+    private UniversityItemDto mapToUniversityItemDto(UniversityItem university, SearchItem searchItem) {
+        int matchingInterests = getMatchingInterestCount(university.getInterests(), searchItem.getInterests());
+
+        return new UniversityItemDto(
+                university.getId(),
+                university.getUniversity(),
+                university.getCity(),
+                university.getFaculty(),
+                university.getFieldOfStudy(),
+                university.getTitle(),
+                university.getWebsite(),
+                university.getLogoURL(),
+                matchingInterests
+        );
     }
 
     private int getMatchingInterestCount(List<String> interests, List<String> searchInterests) {

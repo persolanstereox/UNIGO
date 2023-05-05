@@ -4,7 +4,24 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="c5c49085-2474-44fd-85e7-333becfcf646" name="Changes" comment="moved business logic of university filter method from controller to service" />
+    <list default="true" id="c5c49085-2474-44fd-85e7-333becfcf646" name="Changes" comment="update .gitignore">
+      <change afterPath="$PROJECT_DIR$/src/main/java/ug/unigo/UniGo/config/Encoder.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/ug/unigo/UniGo/config/JwtAuthenticationFilter.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/ug/unigo/UniGo/config/JwtTokenUtil.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/ug/unigo/UniGo/config/SecurityConfig.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/ug/unigo/UniGo/controller/AuthController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/ug/unigo/UniGo/model/User.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/ug/unigo/UniGo/model/UserLoginDto.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/ug/unigo/UniGo/model/UserRegistrationDto.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/ug/unigo/UniGo/repository/UserRepository.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/ug/unigo/UniGo/service/UserService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ug/unigo/UniGo/model/UniversityItemDto.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ug/unigo/UniGo/model/UniversityItemDto.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ug/unigo/UniGo/service/ItemService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ug/unigo/UniGo/service/ItemService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/ug/unigo/UniGo/service/ItemService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/ug/unigo/UniGo/service/ItemService.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/test-classes/ug/unigo/UniGo/UniGoApplicationTests.class" beforeDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -13,6 +30,7 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
+        <option value="Record" />
         <option value="Interface" />
         <option value="Class" />
       </list>
@@ -64,7 +82,7 @@
     &quot;project.structure.last.edited&quot;: &quot;Project&quot;,
     &quot;project.structure.proportion&quot;: &quot;0.0&quot;,
     &quot;project.structure.side.proportion&quot;: &quot;0.0&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;editor.preferences.fonts.default&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;vcs.Git&quot;,
     &quot;spring.configuration.checksum&quot;: &quot;2e427c268ac1768b9add94b65e2d6c14&quot;
   }
 }</component>
@@ -140,6 +158,11 @@
       <workItem from="1682497370443" duration="78000" />
       <workItem from="1682501613584" duration="1320000" />
       <workItem from="1682543395127" duration="1971000" />
+      <workItem from="1682620433438" duration="956000" />
+      <workItem from="1682621536004" duration="209000" />
+      <workItem from="1683228779519" duration="7141000" />
+      <workItem from="1683236559557" duration="979000" />
+      <workItem from="1683271556379" duration="1161000" />
     </task>
     <task id="LOCAL-00001" summary="added mongoDB connection">
       <created>1682180335791</created>
@@ -155,7 +178,14 @@
       <option name="project" value="LOCAL" />
       <updated>1682496833018</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="update .gitignore">
+      <created>1682547032184</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1682547032184</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -166,7 +196,26 @@
       <map>
         <entry key="MAIN">
           <value>
-            <State />
+            <State>
+              <option name="FILTERS">
+                <map>
+                  <entry key="branch">
+                    <value>
+                      <list>
+                        <option value="development" />
+                      </list>
+                    </value>
+                  </entry>
+                </map>
+              </option>
+              <option name="COLUMN_ID_WIDTH">
+                <map>
+                  <entry key="Table.Default.Author.ColumnIdWidth" value="148" />
+                  <entry key="Table.Default.Date.ColumnIdWidth" value="136" />
+                  <entry key="Table.Space.CommitStatus.ColumnIdWidth" value="64" />
+                </map>
+              </option>
+            </State>
           </value>
         </entry>
       </map>
@@ -175,7 +224,8 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="added mongoDB connection" />
     <MESSAGE value="moved business logic of university filter method from controller to service" />
-    <option name="LAST_COMMIT_MESSAGE" value="moved business logic of university filter method from controller to service" />
+    <MESSAGE value="update .gitignore" />
+    <option name="LAST_COMMIT_MESSAGE" value="update .gitignore" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
