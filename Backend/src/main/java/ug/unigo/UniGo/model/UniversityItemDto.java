@@ -1,20 +1,13 @@
 package ug.unigo.UniGo.model;
 
-import lombok.AllArgsConstructor;
-import lombok.Getter;
+public record UniversityItemDto(String id,
+        String university,
+        String city,
+        String faculty,
+        String fieldOfStudy,
+        String title,
+        String website,
+        String logoURL,
+        int matchingInterests) {
 
-import java.util.List;
-
-@AllArgsConstructor
-@Getter
-public class UniversityItemDto {
-    private String university;
-    private String city;
-    private String faculty;
-    private String fieldOfStudy;
-    private String title;
-    private String website;
-    private List<String> interests;
-    private String logoURL;
-    private int matchingInterests;
 }

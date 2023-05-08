@@ -35,7 +35,7 @@ public class UniversityController {
         return ResponseEntity.ok(universityItem);
     }
 
-    @GetMapping("/universities/filter")
+    @PostMapping("/universities/filter")
     public Iterable<UniversityItemDto> filterUniversities(@RequestBody SearchItem searchItem) {
         return universityService.filterItems(searchItem);
     }

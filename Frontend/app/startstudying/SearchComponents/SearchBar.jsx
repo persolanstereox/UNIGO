@@ -1,38 +1,56 @@
 "use client";
-import { use, useState } from "react";
+import { use, useEffect, useRef, useState } from "react";
 import List from "./List";
 
 const SearchBar = (props) => {
- 
-  // const [search, setSearch] = useState("");
+  const containerRef = useRef(null);
+  // console.log(props.focus)
+  const stateHandler = () => {
+    props.focusState(true);
+    console.log(props.focus);
+  };
+  useEffect(() => {
+    const handler = (e) => {
+      console.log(e.target);
+      console.log(containerRef.current);
+      console.log(e.code);
+      // if (e.target != containerRef.current) return;
+      switch (e.code) {
+        case "Enter":
+        case "Space":
+          props.focusState((prev) => !prev);
+          console.log(props.focus);
+          break;
+        case "ArrowUp":
+        case "ArrowDown": {
+          if (!props.focus) {
+            props.focusState(true);
+            console.log(props.focus);
+            break;
+          }
+        }
+        case "Escape":
+          props.focusState((prev) => !prev);
+          console.log("click");
+          console.log(props.focus);
+          break;
+      }
+    };
+    containerRef.current?.addEventListener("keydown", handler);
 
-  // let SearchHandler = (e) => {
-  //   setSearch(e.target.value.toLowerCase())
-  //   // props.onChange();
-  //   console.log(e.target.value)
-  // }
+    return () => {
+      containerRef.current?.removeEventListener("keydown", handler);
+    };
+  }, [props.focus]);
 
-  // const [focus, setFocus] = useState(false);
-
-  // const focusHandler = () => {
-  //   setFocus(true);
-  // };
-
-  // const [focus, setFocus] = useState(false);
-
-  const hanndlingFocus = () => {
-    props.test(true)
-  }
-
-
+  // onBlur={() => props.focusState(false)}
 
   return (
-    <div>
+    <div onFocus={stateHandler} ref={containerRef}>
       <label htmlFor={props.id}>{props.label}</label>
       <input
         onChange={props.onChange}
-        // onFocus={props.settingFocus}
-        onFocus={hanndlingFocus}
+        // onFocus={stateHandler}
         type="text"
         id={props.id}
         name={props.id}
@@ -43,10 +61,10 @@ const SearchBar = (props) => {
         searchName={props.search}
         data={props.data}
         focus={props.focus}
+        focusState={props.focusState}
         // removeList={props.settingFocus}
         listButtonsFunctionality={props.listButtonsFunctionality}
       />
-      
     </div>
   );
 };
