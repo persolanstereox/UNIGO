@@ -4,11 +4,13 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="c5c49085-2474-44fd-85e7-333becfcf646" name="Changes" comment="added cors configurer">
+    <list default="true" id="c5c49085-2474-44fd-85e7-333becfcf646" name="Changes" comment="moved business logic from authcontroller to service, removed unused imports">
+      <change afterPath="$PROJECT_DIR$/src/main/java/ug/unigo/UniGo/service/AuthService.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/ug/unigo/UniGo/config/SecurityConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ug/unigo/UniGo/config/SecurityConfig.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/ug/unigo/UniGo/controller/UniversityController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ug/unigo/UniGo/controller/UniversityController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Frontend/app/startstudying/SearchContainer.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/../Frontend/app/startstudying/SearchContainer.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ug/unigo/UniGo/config/JwtAuthenticationFilter.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ug/unigo/UniGo/config/JwtAuthenticationFilter.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ug/unigo/UniGo/controller/AuthController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ug/unigo/UniGo/controller/AuthController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ug/unigo/UniGo/model/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ug/unigo/UniGo/model/User.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/ug/unigo/UniGo/controller/UniversityController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/ug/unigo/UniGo/controller/UniversityController.class" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -75,6 +77,9 @@
   }
 }</component>
   <component name="RunManager" selected="Spring Boot.UniGoApplication">
+    <configuration name="generated-requests | #2" type="HttpClient.HttpRequestRunConfigurationType" factoryName="HTTP Request" temporary="true" nameIsGenerated="true" path="$APPLICATION_CONFIG_DIR$/scratches/generated-requests.http" index="2" requestIdentifier="#2" runType="Run single request">
+      <method v="2" />
+    </configuration>
     <configuration name="UniversityItemRepositoryTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="Backend" />
       <extension name="coverage">
@@ -122,6 +127,7 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="HTTP Request.generated-requests | #2" />
         <item itemvalue="JUnit.UniversityItemValidationTests" />
         <item itemvalue="JUnit.UniversityItemRepositoryTest" />
         <item itemvalue="JUnit.UniversityItemValidationTests" />
@@ -152,7 +158,8 @@
       <workItem from="1683236559557" duration="979000" />
       <workItem from="1683271556379" duration="2735000" />
       <workItem from="1683301169077" duration="2137000" />
-      <workItem from="1683303538765" duration="2320000" />
+      <workItem from="1683303538765" duration="4241000" />
+      <workItem from="1683323968995" duration="1186000" />
     </task>
     <task id="LOCAL-00001" summary="added mongoDB connection">
       <created>1682180335791</created>
@@ -196,7 +203,21 @@
       <option name="project" value="LOCAL" />
       <updated>1683301701031</updated>
     </task>
-    <option name="localTasksCounter" value="7" />
+    <task id="LOCAL-00007" summary="changed the filter method from GET to POST">
+      <created>1683307922000</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1683307922000</updated>
+    </task>
+    <task id="LOCAL-00008" summary="moved business logic from authcontroller to service, removed unused imports">
+      <created>1683325111131</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1683325111131</updated>
+    </task>
+    <option name="localTasksCounter" value="9" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -239,7 +260,9 @@
     <MESSAGE value="implementing Security and JWT, all users can use GET methods, but only admin can CREATE, UPDATE, DELETE, refactored the university Dto and filtering" />
     <MESSAGE value="improved filter method, now the universities are sorted by matchinginterests" />
     <MESSAGE value="added cors configurer" />
-    <option name="LAST_COMMIT_MESSAGE" value="added cors configurer" />
+    <MESSAGE value="changed the filter method from GET to POST" />
+    <MESSAGE value="moved business logic from authcontroller to service, removed unused imports" />
+    <option name="LAST_COMMIT_MESSAGE" value="moved business logic from authcontroller to service, removed unused imports" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
