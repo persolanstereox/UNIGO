@@ -7,11 +7,16 @@
     },
     {
       "id": 2,
-      "title": "Master",
+      "title": "Engineer",
       "type": "title"
     },
     {
       "id": 3,
+      "title": "Master",
+      "type": "title"
+    },
+    {
+      "id": 4,
       "title": "Ph.D",
       "type": "title"
     }

@@ -24,15 +24,15 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en">
       <body >
-        <nav className="flex justify-between h-1/4">
+        <nav className="flex flex-wrap  justify-between  h-1/6 mb-8  items-center whitespace-nowrap max-[850px]:justify-center">
           <Image
             src="/unigo-logo.png"
             width={400}
             height={50}
             alt="Logo"
-            className="ml-8 h-36"
+            className="ml-8 h-32"
           />
-          <ul className="flex mr-16">
+          <ul className="flex">
             <li className=" flex items-center mx-11">
               <Link
                 onClick={() => setHome(prev => !prev)}

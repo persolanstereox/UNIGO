@@ -1,11 +1,11 @@
-import MainDivider from "./MainDivider";
+import MainDivider from "./SearchComponents/UI/MainDivider";
 import SearchContainer from "./SearchContainer";
 
 function StartStudying() {
   return (
-    <main className="h-3/4">
+    <main>
       <section className="container mx-auto px-4  h-fit max-h-full max-w-screen-lg ">
-          <MainDivider/>
+          <MainDivider label={'Discover Universities that fit your needs'}/>
           <SearchContainer/>
       </section>
     </main>
