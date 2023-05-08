@@ -4,7 +4,7 @@ import "./globals.css";
 import Image from "next/image";
 import Link from "next/link";
 import { Poppins } from "next/font/google";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 
 const poppins = Poppins({
   weight: ["400", "700"],
@@ -12,14 +12,30 @@ const poppins = Poppins({
 });
 
 export default function RootLayout({ children }) {
-  let [home, setHome] = useState(true);
+  let [page, setPage] = useState(true);
 
-  // const handlerStartStudying = () => {
-  //   setHome(false)
-  // };
-  // const handlerHome = () => {
-  //   setHome(true)
-  // }
+  useEffect(() => {
+    const PageInfo = localStorage.getItem('page');
+
+    if(PageInfo === '1') {
+      setPage(false)
+    }
+    if(PageInfo === '2') {
+      setPage(true)
+    }
+  })
+
+ 
+  const pageHandlerStartStudying = () => {
+    localStorage.setItem('page', '1');
+    setPage(false)
+  }
+
+  const pageHandlerHome = () => {
+    localStorage.setItem('page', '2');
+    setPage(true)
+  }
+
 
   return (
     <html lang="en">
@@ -35,9 +51,10 @@ export default function RootLayout({ children }) {
           <ul className="flex">
             <li className=" flex items-center mx-11">
               <Link
-                onClick={() => setHome(prev => !prev)}
+                // onClick={() => setPage(prev => !prev)}
+                onClick={pageHandlerHome}
                 className={` ${
-                  home ? "underline" : ""
+                  page ? "underline" : ""
                 } hover:underline text-1.5xl`}
                 href="/"
               >
@@ -46,9 +63,10 @@ export default function RootLayout({ children }) {
             </li>
             <li className=" flex items-center mx-11">
               <Link
-                onClick={() => setHome(prev => !prev)}
+                // onClick={() => setPage(prev => !prev)}
+                onClick={pageHandlerStartStudying}
                 className={` ${
-                  !home ? "underline" : ""
+                  !page ? "underline" : ""
                 } hover:underline text-1.5xl`}
                 href="/startstudying"
               >
