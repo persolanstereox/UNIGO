@@ -1,6 +1,6 @@
 "use client";
 /// External Libraries
-import { useRef, useState } from "react";
+import { useContext, useRef, useState } from "react";
 import axios from "axios";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
@@ -11,6 +11,7 @@ import FormButtonsContainer from "./SearchComponents/UI/FormButtonsContainer";
 import Submit from "./SearchComponents/UI/buttons/Submit";
 import Loader from "./SearchComponents/UI/Loader";
 import ResulstsContainer from "./SearchComponents/ResultsContainer";
+import SearchContext from "./SearchContext";
 
 /// Data
 import cities from "@/Frontend/test-data/cities.json";
@@ -23,10 +24,12 @@ const SearchContainer = () => {
   const [citiesListFocus, setCitiesFocus] = useState(false);
   const [subjectsListFocus, setSubjectsFocus] = useState(false);
   const [activeButton, setActiveButton] = useState(null);
-  const [data, setData] = useState(null);
-  const [isLoading, setIsLoading] = useState(false);
-  const [error, setError] = useState(null);
-  const results = useRef(null);
+  // const [data, setData] = useState(null);
+  // const [isLoading, setIsLoading] = useState(false);
+  // const [error, setError] = useState(null);
+  // const results = useRef(null);
+
+  const FetchCtx = useContext(SearchContext)
 
   const ErrorToast = () => toast("Something went wrong!");
 
@@ -69,48 +72,35 @@ const SearchContainer = () => {
     setActiveButton(button.value);
   };
 
-  // function handleSubmit(e) {
+  
+
+  // async function handleSubmit(e) {
   //   e.preventDefault();
 
-  //   const requestBody = formData;
+  //   setData(null);
+  //   setIsLoading(true);
+  //   setError(null);
 
-  //   axios
-  //     .post(URL, requestBody)
-  //     .then((response) => {
-  //       console.log(response.data);
-  //     })
-  //     .catch((err) => {
-  //       console.log(err);
-  //     });
+  //   try {
+  //     const response = await axios.post(URL, formData);
+
+  //     if (response.status !== 200) {
+  //       throw new Error(`Can't find this university, try again`);
+  //     }
+
+  //     setData(response.data);
+  //     console.log(response.data);
+  //   } catch (error) {
+  //     ErrorToast();
+  //     setError(error.message || "Something went wrong!");
+  //     setData(null);
+  //     console.error(error);
+  //   }
+  //   setIsLoading(false);
+  //   setTimeout(() => {
+  //     results.current?.scrollIntoView({ behavior: "smooth" });
+  //   }, 100);
   // }
-
-  async function handleSubmit(e) {
-    e.preventDefault();
-
-    setData(null);
-    setIsLoading(true);
-    setError(null);
-
-    try {
-      const response = await axios.post(URL, formData);
-
-      if (response.status !== 200) {
-        throw new Error(`Can't find this university, try again`);
-      }
-
-      setData(response.data);
-      console.log(response.data);
-    } catch (error) {
-      ErrorToast();
-      setError(error.message || "Something went wrong!");
-      setData(null);
-      console.error(error);
-    }
-    setIsLoading(false);
-    setTimeout(() => {
-      results.current?.scrollIntoView({ behavior: "smooth" });
-    }, 100);
-  }
 
   // const getFormData = (e) => {
   //   e.preventDefault();
@@ -152,10 +142,14 @@ const SearchContainer = () => {
         />
         <Divider />
         {/* <Submit onClick={handleSubmit} /> */}
-        <Submit onClick={handleSubmit} />
+        <Submit onClick={(e) =>{
+          e.preventDefault()
+          console.log(FetchCtx.handleSubmit(e))
+          console.log(FetchCtx.data) }
+        } />
       </form>
-      {data && <ResulstsContainer data={data} ref={results} />}
-      {isLoading && <Loader />}
+      {/* {FetchCtx.fetchedData && <ResulstsContainer data={FetchCtx.fetchedData} ref={FetchCtx.ref} />} */}
+      {FetchCtx.isLoading && <Loader />}
       <ToastContainer />
     </>
   );
