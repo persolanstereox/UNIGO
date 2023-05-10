@@ -1,27 +1,31 @@
 "use client"
+import axios from "axios";
 // const { createContext } = require("react");
 import { createContext } from "react";
 
-const SearchContext = createContext({
+const SearchContext = createContext(
+  // {
 //   citiesListFocus: false,
-//   subjectsListFocus: false,
-  fetchedData: "",
-  isLoading: false,
-  error: null,
-  ref: null,
-//   onInputChange: (e) => {},
-//   onListButtonClick: (e) => {},
-//   onFormButtonClick: (e) => {},
-  handleSubmit: async (e) => {},
+// //   subjectsListFocus: false,
+//   fetchedData: "",
+//   isLoading: false,
+//   error: null,
+//   ref: null,
+// //   onInputChange: (e) => {},
+// //   onListButtonClick: (e) => {},
+// //   onFormButtonClick: (e) => {},
+//   handleSubmit: async(e) => {},
 
 
-});
+// }
+);
 
-export const SearchContextProvider = (props) => {
+export const SearchContextProvider = ({children}) => {
 //   const [search, setSearch] = useState("");
 //   const [citiesListFocus, setCitiesFocus] = useState(false);
 //   const [subjectsListFocus, setSubjectsFocus] = useState(false);
 //   const [activeButton, setActiveButton] = useState(null);
+const URL = "http://localhost:8080/api/universities/filter";
   const [data, setData] = useState(null);
   const [isLoading, setIsLoading] = useState(false);
   const [error, setError] = useState(null);
@@ -96,20 +100,21 @@ export const SearchContextProvider = (props) => {
 
   return (
     <SearchContext.Provider
-      value={{
+      value={
         // citiesListFocus: citiesListFocus,
         // subjectsListFocus: subjectsListFocus,
-        fetchedData: data,
-        isLoading: isLoading,
-        error: error,
-        ref: results,
+        // fetchedData: data,
+        // isLoading: isLoading,
+        // error: error,
+        // ref: results,
         // onInputChange: handleFormData,
         // onListButtonClick: handleFormDataByListOptions,
         // onFormButtonClick: handleButtonsValue,
-        handleSubmit: handleSubmit,
-      }}
+      // handleSubmit: handleSubmit,
+      {handleSubmit}
+      }
     >
-      {props.children}
+      {children}
     </SearchContext.Provider>
   );
 };

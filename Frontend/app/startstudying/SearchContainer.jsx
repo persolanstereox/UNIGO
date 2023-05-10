@@ -29,7 +29,8 @@ const SearchContainer = () => {
   // const [error, setError] = useState(null);
   // const results = useRef(null);
 
-  const FetchCtx = useContext(SearchContext)
+  // const FetchCtx = useContext(SearchContext)
+  const {handleSubmit} = useContext(SearchContext)
 
   const ErrorToast = () => toast("Something went wrong!");
 
@@ -142,11 +143,13 @@ const SearchContainer = () => {
         />
         <Divider />
         {/* <Submit onClick={handleSubmit} /> */}
-        <Submit onClick={(e) =>{
+        <Submit onClick={(e) => {
           e.preventDefault()
-          console.log(FetchCtx.handleSubmit(e))
-          console.log(FetchCtx.data) }
-        } />
+          // console.log(FetchCtx.isLoading)
+          // console.log(FetchCtx.data)
+          // console.log(FetchCtx.error)
+          console.log(handleSubmit)
+        }} />
       </form>
       {/* {FetchCtx.fetchedData && <ResulstsContainer data={FetchCtx.fetchedData} ref={FetchCtx.ref} />} */}
       {FetchCtx.isLoading && <Loader />}

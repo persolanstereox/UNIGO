@@ -11,9 +11,9 @@ function StartStudying() {
       <section className="container mx-auto px-4  h-fit max-h-full max-w-screen-lg ">
         <MainDivider label={"Discover Universities that fit your needs"} />
         <SearchContainer />
-        {FetchCtx.fetchedData && (
+        {/* {FetchCtx.fetchedData && (
           <ResulstsContainer data={FetchCtx.fetchedData} ref={FetchCtx.ref} />
-        )}
+        )} */}
       </section>
     </main>
   );
