@@ -1,21 +1,16 @@
-"use client"
-import MainDivider from "./SearchComponents/UI/MainDivider";
-import SearchContainer from "./SearchContainer";
+"use client";
 
-import { useContext } from "react";
-import SearchContext from "./SearchContext";
+import Sections from "./Sections";
+
+import { FetchContextProvider } from "./FetchContext";
+
 function StartStudying() {
-  const FetchCtx = useContext(SearchContext);
   return (
-    <main>
-      <section className="container mx-auto px-4  h-fit max-h-full max-w-screen-lg ">
-        <MainDivider label={"Discover Universities that fit your needs"} />
-        <SearchContainer />
-        {/* {FetchCtx.fetchedData && (
-          <ResulstsContainer data={FetchCtx.fetchedData} ref={FetchCtx.ref} />
-        )} */}
-      </section>
-    </main>
+    <FetchContextProvider>
+      <main>
+        <Sections />
+      </main>
+    </FetchContextProvider>
   );
 }
 

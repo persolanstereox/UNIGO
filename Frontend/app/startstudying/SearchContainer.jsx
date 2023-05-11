@@ -1,8 +1,8 @@
 "use client";
 /// External Libraries
-import { useContext, useRef, useState } from "react";
-import axios from "axios";
-import { ToastContainer, toast } from "react-toastify";
+import { useContext, useState } from "react";
+
+import { ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 /// Components
 import Divider from "./SearchComponents/UI/Divider";
@@ -10,29 +10,20 @@ import SearchBar from "./SearchComponents/SearchBar";
 import FormButtonsContainer from "./SearchComponents/UI/FormButtonsContainer";
 import Submit from "./SearchComponents/UI/buttons/Submit";
 import Loader from "./SearchComponents/UI/Loader";
-import ResulstsContainer from "./SearchComponents/ResultsContainer";
-import SearchContext from "./SearchContext";
 
 /// Data
 import cities from "@/Frontend/test-data/cities.json";
 import interests from "@/Frontend/test-data/subjects.json";
 import titles from "@/Frontend/test-data/titles.json";
+import FetchContext from "./FetchContext";
 
 const SearchContainer = () => {
-  const URL = "http://localhost:8080/api/universities/filter";
   const [search, setSearch] = useState("");
   const [citiesListFocus, setCitiesFocus] = useState(false);
   const [subjectsListFocus, setSubjectsFocus] = useState(false);
   const [activeButton, setActiveButton] = useState(null);
-  // const [data, setData] = useState(null);
-  // const [isLoading, setIsLoading] = useState(false);
-  // const [error, setError] = useState(null);
-  // const results = useRef(null);
 
-  // const FetchCtx = useContext(SearchContext)
-  const {handleSubmit} = useContext(SearchContext)
-
-  const ErrorToast = () => toast("Something went wrong!");
+  const FetchCtx = useContext(FetchContext);
 
   const [formData, setFormData] = useState({
     cities: [],
@@ -73,43 +64,6 @@ const SearchContainer = () => {
     setActiveButton(button.value);
   };
 
-  
-
-  // async function handleSubmit(e) {
-  //   e.preventDefault();
-
-  //   setData(null);
-  //   setIsLoading(true);
-  //   setError(null);
-
-  //   try {
-  //     const response = await axios.post(URL, formData);
-
-  //     if (response.status !== 200) {
-  //       throw new Error(`Can't find this university, try again`);
-  //     }
-
-  //     setData(response.data);
-  //     console.log(response.data);
-  //   } catch (error) {
-  //     ErrorToast();
-  //     setError(error.message || "Something went wrong!");
-  //     setData(null);
-  //     console.error(error);
-  //   }
-  //   setIsLoading(false);
-  //   setTimeout(() => {
-  //     results.current?.scrollIntoView({ behavior: "smooth" });
-  //   }, 100);
-  // }
-
-  // const getFormData = (e) => {
-  //   e.preventDefault();
-
-  //   console.log(e.target.closest("form"));
-  //   console.log(formData);
-  // };
-
   return (
     <>
       <form className=" ">
@@ -142,16 +96,13 @@ const SearchContainer = () => {
           search={search}
         />
         <Divider />
-        {/* <Submit onClick={handleSubmit} /> */}
-        <Submit onClick={(e) => {
-          e.preventDefault()
-          // console.log(FetchCtx.isLoading)
-          // console.log(FetchCtx.data)
-          // console.log(FetchCtx.error)
-          console.log(handleSubmit)
-        }} />
+        <Submit
+          onClick={(e) => {
+            e.preventDefault();
+            FetchCtx.handleSubmit(formData);
+          }}
+        />
       </form>
-      {/* {FetchCtx.fetchedData && <ResulstsContainer data={FetchCtx.fetchedData} ref={FetchCtx.ref} />} */}
       {FetchCtx.isLoading && <Loader />}
       <ToastContainer />
     </>
