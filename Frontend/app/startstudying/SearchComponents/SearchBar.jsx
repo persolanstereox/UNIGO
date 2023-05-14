@@ -1,5 +1,5 @@
 "use client";
-import { use, useEffect, useRef, useState } from "react";
+import { useEffect, useRef} from "react";
 import List from "./List";
 
 const SearchBar = (props) => {
@@ -43,14 +43,13 @@ const SearchBar = (props) => {
     };
   }, [props.focus]);
 
-  // onBlur={() => props.focusState(false)}
+  // onFocus={stateHandler}
 
   return (
-    <div onFocus={stateHandler} ref={containerRef}>
+    <div onFocus={stateHandler}  ref={containerRef}>
       <label htmlFor={props.id}>{props.label}</label>
       <input
         onChange={props.onChange}
-        // onFocus={stateHandler}
         type="text"
         id={props.id}
         name={props.id}
@@ -62,7 +61,6 @@ const SearchBar = (props) => {
         data={props.data}
         focus={props.focus}
         focusState={props.focusState}
-        // removeList={props.settingFocus}
         listButtonsFunctionality={props.listButtonsFunctionality}
       />
     </div>

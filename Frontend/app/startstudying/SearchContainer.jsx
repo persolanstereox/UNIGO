@@ -18,7 +18,8 @@ import titles from "@/Frontend/test-data/titles.json";
 import FetchContext from "./FetchContext";
 
 const SearchContainer = () => {
-  const [search, setSearch] = useState("");
+  const [citiesSearch, setCitiesSearch] = useState("");
+  const [interestsSearch, setInterestsSearch] = useState("");
   const [citiesListFocus, setCitiesFocus] = useState(false);
   const [subjectsListFocus, setSubjectsFocus] = useState(false);
   const [activeButton, setActiveButton] = useState(null);
@@ -30,13 +31,23 @@ const SearchContainer = () => {
     interests: [],
     title: "",
   });
-  const handleFormData = (e) => {
+
+  const handleCitiesInput = (e) => {
     setFormData({
       ...formData,
       [e.target.name]: [e.target.value.trim()],
     });
 
-    setSearch(e.target.value.toLowerCase());
+    setCitiesSearch(e.target.value.toLowerCase());
+  };
+
+  const handleInterestsInput = (e) => {
+    etFormData({
+      ...formData,
+      [e.target.name]: [e.target.value.trim()],
+    });
+
+    setInterestsSearch(e.target.value.toLowerCase());
   };
 
   const handleFormDataByButtons = (e) => {
@@ -72,11 +83,11 @@ const SearchContainer = () => {
           data={cities}
           label={"Cities"}
           id={"cities"}
-          onChange={handleFormData}
+          onChange={handleCitiesInput}
           listButtonsFunctionality={handleFormDataByButtons}
           focusState={setCitiesFocus}
           focus={citiesListFocus}
-          search={search}
+          search={citiesSearch}
         />
         <Divider />
         <FormButtonsContainer
@@ -89,11 +100,11 @@ const SearchContainer = () => {
           data={interests}
           label={"Desired study subjects"}
           id={"interests"}
-          onChange={handleFormData}
+          onChange={handleInterestsInput}
           listButtonsFunctionality={handleFormDataByButtons}
           focusState={setSubjectsFocus}
           focus={subjectsListFocus}
-          search={search}
+          search={interestsSearch}
         />
         <Divider />
         <Submit
