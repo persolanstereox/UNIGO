@@ -11,7 +11,6 @@ const FetchContext = React.createContext({
   ref: null,
   handleSubmit: async (e) => {},
   handleTest: () => {},
-  
 });
 
 export const FetchContextProvider = (props) => {
@@ -27,8 +26,15 @@ export const FetchContextProvider = (props) => {
     setIsLoading(true);
     setError(null);
 
+    const fotmattedData = {
+      cities: [...data.cities],
+      interests: [...data.interests],
+      title: data.title,
+    };
+    console.log(fotmattedData);
+
     try {
-      const response = await axios.post(URL, data);
+      const response = await axios.post(URL, fotmattedData);
 
       if (response.status !== 200) {
         throw new Error(`Can't find this university, try again`);
@@ -47,8 +53,6 @@ export const FetchContextProvider = (props) => {
       results.current?.scrollIntoView({ behavior: "smooth" });
     }, 100);
   }
-
-  
 
   return (
     <FetchContext.Provider

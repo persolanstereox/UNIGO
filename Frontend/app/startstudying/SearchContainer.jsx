@@ -10,6 +10,7 @@ import SearchBar from "./SearchComponents/SearchBar";
 import FormButtonsContainer from "./SearchComponents/UI/FormButtonsContainer";
 import Submit from "./SearchComponents/UI/buttons/Submit";
 import Loader from "./SearchComponents/UI/Loader";
+import ChoosenElement from "./SearchComponents/UI/ChoosenElement";
 
 /// Data
 import cities from "@/Frontend/test-data/cities.json";
@@ -33,35 +34,75 @@ const SearchContainer = () => {
   });
 
   const handleCitiesInput = (e) => {
-    setFormData({
-      ...formData,
-      [e.target.name]: [e.target.value.trim()],
-    });
+    // setFormData({
+    //   ...formData,
+    //   [e.target.name]: [e.target.value.trim()],
+    // });
 
     setCitiesSearch(e.target.value.toLowerCase());
   };
 
   const handleInterestsInput = (e) => {
-    etFormData({
-      ...formData,
-      [e.target.name]: [e.target.value.trim()],
-    });
+    // setFormData({
+    //   ...formData,
+    //   [e.target.name]: [e.target.value.trim()],
+    // });
 
     setInterestsSearch(e.target.value.toLowerCase());
   };
 
-  const handleFormDataByButtons = (e) => {
+  const handleFormDataByButtons = (e, TypeOfTable) => {
     e.stopPropagation();
     e.preventDefault();
 
-    let input = e.target.closest("ul").previousSibling;
+    let input = e.target.closest("ul").previousSibling.firstElementChild;
     input.value = e.target.value;
+    console.log(formData[input.name])
+    console.log(input.name)
+
+   
+
+    // formData[input.name].push(e.target.value)
+    
 
     setFormData({
       ...formData,
-      [input.name]: [e.target.value],
+      [input.name]: [...formData[input.name], e.target.value],
+      // [input.name]: [e.target.value],
+      // [input.name]: formData[input.name] ? [...formData[input.name], e.target.value] : [e.target.value],
+
     });
+
+    console.log(formData)
+    console.log(formData[input.name])
   };
+
+  // const handleFormDataByButtons = (e) => {
+  //   e.stopPropagation();
+  //   e.preventDefault();
+  
+  //   let input = e.target.closest("ul").previousSibling.firstElementChild;
+  //   input.value = e.target.value;
+  
+  //   const fieldName = input.name;
+  //   const fieldValue = e.target.value;
+  
+  //   if (Array.isArray(formData[fieldName])) {
+  //     setFormData({
+  //       ...formData,
+  //       [fieldName]: [...formData[fieldName], fieldValue],
+  //     });
+  //   } else {
+  //     setFormData({
+  //       ...formData,
+  //       [fieldName]: [fieldValue],
+  //     });
+  //   }
+  //   console.log(formData)
+  //   console.log(formData[fieldName])
+    
+  
+  // };
 
   const handleButtonsValue = (e) => {
     e.preventDefault();
@@ -71,6 +112,7 @@ const SearchContainer = () => {
       ...formData,
       [button.name]: button.value,
     });
+    console.log(formData)
 
     setActiveButton(button.value);
   };
@@ -81,6 +123,7 @@ const SearchContainer = () => {
         <Divider />
         <SearchBar
           data={cities}
+          formData={formData.cities}
           label={"Cities"}
           id={"cities"}
           onChange={handleCitiesInput}
@@ -98,6 +141,7 @@ const SearchContainer = () => {
         <Divider />
         <SearchBar
           data={interests}
+          formData={formData.interests}
           label={"Desired study subjects"}
           id={"interests"}
           onChange={handleInterestsInput}
@@ -114,6 +158,7 @@ const SearchContainer = () => {
           }}
         />
       </form>
+      
       {FetchCtx.isLoading && <Loader />}
       <ToastContainer />
     </>

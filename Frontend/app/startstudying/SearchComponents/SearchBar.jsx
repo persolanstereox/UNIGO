@@ -1,5 +1,6 @@
 "use client";
-import { useEffect, useRef} from "react";
+import { useEffect, useRef } from "react";
+import ChoosenElement from "./UI/ChoosenElement";
 import List from "./List";
 
 const SearchBar = (props) => {
@@ -19,13 +20,13 @@ const SearchBar = (props) => {
         case "Enter":
         case "Space":
           props.focusState((prev) => !prev);
-          console.log(props.focus);
+          // console.log(props.focus);
           break;
         case "ArrowUp":
         case "ArrowDown": {
           if (!props.focus) {
             props.focusState(true);
-            console.log(props.focus);
+            // console.log(props.focus);
             break;
           }
         }
@@ -43,19 +44,41 @@ const SearchBar = (props) => {
     };
   }, [props.focus]);
 
+  // const arr = ['Sopot', 'SOpot'];
+  const arr = props.formData
+
+  const handleInput = (e) => {
+    props.onChange(e);
+    props.focusState(true);
+    // console.log(props.formData[props.id])
+    // console.log([...props.formData[props.id]])
+    console.log(arr);
+  };
+  
+  
+
   // onFocus={stateHandler}
 
   return (
-    <div onFocus={stateHandler}  ref={containerRef}>
+    <div ref={containerRef}>
       <label htmlFor={props.id}>{props.label}</label>
-      <input
-        onChange={props.onChange}
-        type="text"
-        id={props.id}
-        name={props.id}
-        placeholder="Search"
-        className=" block p-2.5 w-full z-20 text-sm text-gray-900 bg-gray-50 rounded-r-lg border-l-gray-50 border-l-2 border border-gray-300"
-      />
+      <div className=" block p-2.5 w-full z-20 text-sm text-gray-900 bg-gray-50 rounded-r-lg border-l-gray-50 border-l-2 border border-gray-300">
+        
+        <input
+          onChange={handleInput}
+          type="text"
+          id={props.id}
+          name={props.id}
+          placeholder="Search"
+          // className=" block p-2.5 w-full z-20 text-sm text-gray-900 bg-gray-50 rounded-r-lg border-l-gray-50 border-l-2 border border-gray-300"
+        />
+        <div>
+        {arr.map(element => (
+          <ChoosenElement key={element} value={element}/>
+        ))}
+        </div>
+      </div>
+
       <List
         searchName={props.search}
         data={props.data}
