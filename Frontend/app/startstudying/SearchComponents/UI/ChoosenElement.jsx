@@ -1,10 +1,17 @@
 const ChoosenElement = (props) => {
-    return(
-        <div key={props.value} className="bg-blue-500 text-white font-bold py-1 px-2 rounded-full w-16 mr-2">
-            <span>{props.value}</span>
-            <button>Delete</button>
-        </div>
-    )
-}
+  return (
+    <div
+      key={props.value}
+      className="flex justify-evenly items-center  bg-blue-500 text-white font-bold  rounded-full w-36 mr-2 py-2"
+    >
+      <span className="">{props.value}</span>
+      <button value={props.value} onClick={(e) => {
+        props.removeChoosenElement(e)
+      }} >
+        <img src="/remove-icon.png" alt="Remove Icon" className="w-4" />
+      </button>
+    </div>
+  );
+};
 
 export default ChoosenElement;

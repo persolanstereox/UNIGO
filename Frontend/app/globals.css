@@ -14,3 +14,9 @@ body {
   height: 100vh;
   overflow-x: hidden;
 }
+input {
+  outline: none;
+}
+input:focus {
+  background-color: none;
+}

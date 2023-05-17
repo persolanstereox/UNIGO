@@ -32,7 +32,7 @@ function List(props) {
               <button
                 // onClick={props.listButtonsFunctionality}
                 onClick={(e) => {
-                  props.listButtonsFunctionality(e, props.id)
+                  props.listButtonsFunctionality(e)
                 }}
                 value={search.name}
                 name={search.type}

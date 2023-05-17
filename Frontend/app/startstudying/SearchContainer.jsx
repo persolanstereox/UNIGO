@@ -34,75 +34,46 @@ const SearchContainer = () => {
   });
 
   const handleCitiesInput = (e) => {
-    // setFormData({
-    //   ...formData,
-    //   [e.target.name]: [e.target.value.trim()],
-    // });
-
     setCitiesSearch(e.target.value.toLowerCase());
   };
 
   const handleInterestsInput = (e) => {
-    // setFormData({
-    //   ...formData,
-    //   [e.target.name]: [e.target.value.trim()],
-    // });
-
     setInterestsSearch(e.target.value.toLowerCase());
   };
 
-  const handleFormDataByButtons = (e, TypeOfTable) => {
+  const handleFormDataByButtons = (e) => {
     e.stopPropagation();
     e.preventDefault();
 
-    let input = e.target.closest("ul").previousSibling.firstElementChild;
+    let input = e.target.closest("ul").previousSibling.lastElementChild;
     input.value = e.target.value;
-    console.log(formData[input.name])
-    console.log(input.name)
 
-   
+    if ([...formData[input.name]].length < 5) {
+      setFormData({
+        ...formData,
+        [input.name]: new Set([...formData[input.name], e.target.value]),
+      });
+    }
 
-    // formData[input.name].push(e.target.value)
-    
+    input.value = "";
 
-    setFormData({
-      ...formData,
-      [input.name]: [...formData[input.name], e.target.value],
-      // [input.name]: [e.target.value],
-      // [input.name]: formData[input.name] ? [...formData[input.name], e.target.value] : [e.target.value],
-
-    });
-
-    console.log(formData)
-    console.log(formData[input.name])
+    console.log(formData);
+    console.log(formData[input.name]);
   };
 
-  // const handleFormDataByButtons = (e) => {
-  //   e.stopPropagation();
-  //   e.preventDefault();
-  
-  //   let input = e.target.closest("ul").previousSibling.firstElementChild;
-  //   input.value = e.target.value;
-  
-  //   const fieldName = input.name;
-  //   const fieldValue = e.target.value;
-  
-  //   if (Array.isArray(formData[fieldName])) {
-  //     setFormData({
-  //       ...formData,
-  //       [fieldName]: [...formData[fieldName], fieldValue],
-  //     });
-  //   } else {
-  //     setFormData({
-  //       ...formData,
-  //       [fieldName]: [fieldValue],
-  //     });
-  //   }
-  //   console.log(formData)
-  //   console.log(formData[fieldName])
-    
-  
-  // };
+  const removeChoosenElement = (e) => {
+    e.preventDefault();
+    let input = e.target.closest("div").parentElement.nextElementSibling;
+    let choosenElementValue = e.target.parentElement.value;
+
+    setFormData((prevFormData) => {
+      const updatedData = { ...prevFormData };
+      if (updatedData[input.name].has(choosenElementValue)) {
+        updatedData[input.name].delete(choosenElementValue);
+      }
+      return updatedData;
+    });
+  };
 
   const handleButtonsValue = (e) => {
     e.preventDefault();
@@ -112,7 +83,6 @@ const SearchContainer = () => {
       ...formData,
       [button.name]: button.value,
     });
-    console.log(formData)
 
     setActiveButton(button.value);
   };
@@ -124,6 +94,7 @@ const SearchContainer = () => {
         <SearchBar
           data={cities}
           formData={formData.cities}
+          removeChoosenElement={removeChoosenElement}
           label={"Cities"}
           id={"cities"}
           onChange={handleCitiesInput}
@@ -142,6 +113,7 @@ const SearchContainer = () => {
         <SearchBar
           data={interests}
           formData={formData.interests}
+          removeChoosenElement={removeChoosenElement}
           label={"Desired study subjects"}
           id={"interests"}
           onChange={handleInterestsInput}
@@ -158,7 +130,7 @@ const SearchContainer = () => {
           }}
         />
       </form>
-      
+
       {FetchCtx.isLoading && <Loader />}
       <ToastContainer />
     </>

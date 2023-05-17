@@ -45,7 +45,7 @@ const SearchBar = (props) => {
   }, [props.focus]);
 
   // const arr = ['Sopot', 'SOpot'];
-  const arr = props.formData
+  const arr = [...props.formData];
 
   const handleInput = (e) => {
     props.onChange(e);
@@ -54,29 +54,27 @@ const SearchBar = (props) => {
     // console.log([...props.formData[props.id]])
     console.log(arr);
   };
-  
-  
 
   // onFocus={stateHandler}
 
   return (
     <div ref={containerRef}>
       <label htmlFor={props.id}>{props.label}</label>
-      <div className=" block p-2.5 w-full z-20 text-sm text-gray-900 bg-gray-50 rounded-r-lg border-l-gray-50 border-l-2 border border-gray-300">
-        
+      <div className=" flex p-2.5 w-full z-20 text-sm text-gray-900 bg-gray-50 rounded-r-lg border-l-gray-50 border-l-2 border border-gray-300">
+        <div className="flex flex-wrap items-center">
+          {arr.map((element) => (
+            <ChoosenElement key={element} value={element} removeChoosenElement={props.removeChoosenElement} />
+          ))}
+        </div>
         <input
           onChange={handleInput}
           type="text"
           id={props.id}
           name={props.id}
           placeholder="Search"
-          // className=" block p-2.5 w-full z-20 text-sm text-gray-900 bg-gray-50 rounded-r-lg border-l-gray-50 border-l-2 border border-gray-300"
+          className="bg-gray-50"
+          required
         />
-        <div>
-        {arr.map(element => (
-          <ChoosenElement key={element} value={element}/>
-        ))}
-        </div>
       </div>
 
       <List

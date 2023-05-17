@@ -20,6 +20,8 @@ export const FetchContextProvider = (props) => {
   const [error, setError] = useState(null);
   const results = useRef(null);
   const ErrorToast = () => toast("Something went wrong!");
+  const EmptyResponse = () =>
+    toast("We can't find any matching University, try again! ");
 
   async function handleSubmit(data) {
     setData(null);
@@ -38,6 +40,12 @@ export const FetchContextProvider = (props) => {
 
       if (response.status !== 200) {
         throw new Error(`Can't find this university, try again`);
+      }
+
+      if (response.data.length < 1) {
+        EmptyResponse();
+        setIsLoading(false);
+        return;
       }
 
       setData(response.data);
