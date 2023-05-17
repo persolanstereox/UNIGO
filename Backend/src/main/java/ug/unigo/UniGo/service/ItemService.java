@@ -47,6 +47,7 @@ public class ItemService {
         return mongoTemplate.find(dbQuery, UniversityItem.class)
                 .stream()
                 .map((UniversityItem university) -> mapToUniversityItemDto(university,searchItem))
+                .filter(university -> university.matchingInterests() > 0)
                 .sorted(Comparator.comparingInt(UniversityItemDto::matchingInterests).reversed())
                 .collect(Collectors.toList());
     }
