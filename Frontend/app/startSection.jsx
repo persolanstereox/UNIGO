@@ -1,11 +1,11 @@
-import MainButton from "./mainButtons";
-import SocialMedia from "./socialMedia";
+import MainButton from "./MainButton";
+import SocialMedia from "./SocialMedia";
 import Image from "next/image";
 
 function StartSection() {
   return (
     <section className="flex justify-around h-2/4">
-      <div className="flex items-center">
+      <div className="flex items-center ">
         <MainButton />
       </div>
       <div className="absolute bottom-0">
@@ -14,6 +14,7 @@ function StartSection() {
           width={400}
           height={200}
           alt="Man icon with laptop"
+          className="max-[600px]:w-64"
         />
       </div>
       <div className="flex items-center">

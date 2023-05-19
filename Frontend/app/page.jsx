@@ -1,5 +1,5 @@
-import Description from "./description";
-import StartSection from "./startSection"
+import Description from "./Description";
+import StartSection from "./StartSection"
 
 export default async function Home() {
 

@@ -46,12 +46,12 @@ export default function RootLayout({ children }) {
             width={400}
             height={50}
             alt="Logo"
-            className="ml-8 h-32"
+            className="ml-8 h-32 max-[850px]:ml-0"
           />
           <ul className="flex">
             <li className=" flex items-center mx-11">
               <Link
-                // onClick={() => setPage(prev => !prev)}
+                
                 onClick={pageHandlerHome}
                 className={` ${
                   page ? "underline" : ""
@@ -63,7 +63,7 @@ export default function RootLayout({ children }) {
             </li>
             <li className=" flex items-center mx-11">
               <Link
-                // onClick={() => setPage(prev => !prev)}
+                
                 onClick={pageHandlerStartStudying}
                 className={` ${
                   !page ? "underline" : ""

@@ -10,7 +10,17 @@ const ResultCard = (props) => {
       <h4 className="text-sm text-gray-500">{props.data.fieldOfStudy}</h4>
       <div className="flex items-center justify-center mt-3">
         <div className=" rounded-full p-1 bg-cyan-500 font-medium">
-          <span className="mx-3">Very good match</span>
+          <span className="mx-3">
+            {props.data.matchingInterests === 1
+              ? "Very poor match"
+              : props.data.matchingInterests === 2
+              ? "Poor match"
+              : props.data.matchingInterests === 3
+              ? "Good match"
+              : props.data.matchingInterests === 4
+              ? "Very good match"
+              : "Perfect match"}
+          </span>
         </div>
         <div className="flex items-center justify-center relative right-2 bg-white border-2 border-zinc-200 rounded-full w-11 h-11 ">
           <span className="text-2xl font-bold">%</span>

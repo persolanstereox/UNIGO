@@ -16,7 +16,7 @@ function TitleButtonContainer(props) {
             key={button.id}
             data={button.title}
             name={button.type}
-            styles={`bg-blue-500 text-white font-bold py-2 px-4 rounded-full w-28 mr-2 ${
+            styles={`bg-blue-500 text-white font-bold py-2 px-4 rounded-full w-28 mr-2 max-[512px]:mb-1.5 ${
               props.active === button.title ? "bg-orange-500" : ""
             }`}
           />

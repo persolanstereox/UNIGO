@@ -60,7 +60,7 @@ const SearchBar = (props) => {
   return (
     <div ref={containerRef}>
       <label htmlFor={props.id}>{props.label}</label>
-      <div className=" flex p-2.5 w-full z-20 text-sm text-gray-900 bg-gray-50 rounded-r-lg border-l-gray-50 border-l-2 border border-gray-300">
+      <div className="flex p-2.5 w-full text-sm text-gray-900 bg-gray-50 rounded-r-lg border-l-gray-50 border-l-2 border border-gray-300">
         <div className="flex flex-wrap items-center">
           {arr.map((element) => (
             <ChoosenElement key={element} value={element} removeChoosenElement={props.removeChoosenElement} />

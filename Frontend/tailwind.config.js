@@ -23,7 +23,7 @@ module.exports = {
       fontSize: {
         sm: '0.8rem',
         base: '1rem',
-        xl: '1rem',
+        xl: '1.3rem',
         '1.5xl': '1.5rem',
         '2xl': '2rem',
         '3xl': '3rem',
@@ -33,6 +33,10 @@ module.exports = {
       spacing: {
         '128': '32rem',
         '144': '36rem',
+      },
+      margin: {
+        '10%': '10%',
+        '14%': '14%'
       }
       
     },
