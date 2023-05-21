@@ -1,4 +1,4 @@
-import MainButton from "./MainButton";
+import MainButton from "./StartButtons";
 import SocialMedia from "./SocialMedia";
 import Image from "next/image";
 

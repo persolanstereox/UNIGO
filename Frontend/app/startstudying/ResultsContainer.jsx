@@ -1,6 +1,6 @@
 import { forwardRef } from "react";
 
-import ResultCard from "./UI/ResultCard";
+import ResultCard from "./SearchComponents/UI/ResultCard";
 const ResulstsContainer = (props, ref) => {
   return (
     <div ref={ref}>

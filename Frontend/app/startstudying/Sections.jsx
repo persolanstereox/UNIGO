@@ -1,6 +1,6 @@
 import MainDivider from "./SearchComponents/UI/MainDivider";
 import SearchContainer from "./SearchContainer";
-import ResultsContainer from "./SearchComponents/ResultsContainer";
+import ResultsContainer from "./ResultsContainer";
 import FetchContext from "./FetchContext";
 import { useContext } from "react";
 
