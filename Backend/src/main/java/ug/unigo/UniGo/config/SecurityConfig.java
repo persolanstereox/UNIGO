@@ -56,6 +56,8 @@ public class SecurityConfig {
                 .requestMatchers(HttpMethod.PUT, "/api/universities/**").hasAuthority("ADMIN")
                 .requestMatchers(HttpMethod.PUT, "/api/university/**").hasAuthority("ADMIN")
                 .requestMatchers(HttpMethod.GET, "/api/universities/**").permitAll()
+                .requestMatchers(HttpMethod.GET, "/api/cities/**").permitAll()
+                .requestMatchers(HttpMethod.GET, "/api/interests/**").permitAll()
                 .anyRequest().authenticated();
 
         http.addFilterBefore(jwtAuthenticationFilter, UsernamePasswordAuthenticationFilter.class);

@@ -21,7 +21,7 @@ public class UniversityItemValidationTests {
 
         UniversityItem item = new UniversityItem();
         item.setUniversity("Example University");
-        item.setCity("Example City");
+        item.setCity("Example CityOrInterest");
         item.setFaculty("Example Faculty");
         item.setFieldOfStudy("Example Field of Study");
         item.setTitle("Example Title");
@@ -47,7 +47,7 @@ public class UniversityItemValidationTests {
 
         UniversityItem item = new UniversityItem();
         item.setUniversity("Example University");
-        item.setCity("Example City");
+        item.setCity("Example CityOrInterest");
         item.setFaculty("Example Faculty");
         item.setFieldOfStudy("Example Field of Study");
         item.setTitle("Example Title");

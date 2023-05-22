@@ -6,6 +6,7 @@ import org.springframework.data.mongodb.core.query.Query;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
 import ug.unigo.UniGo.model.SearchItem;
+import ug.unigo.UniGo.model.SearchData;
 import ug.unigo.UniGo.model.UniversityItem;
 import ug.unigo.UniGo.model.UniversityItemDto;
 import ug.unigo.UniGo.repository.ItemRepository;
@@ -34,19 +35,19 @@ public class ItemService {
                 );
     }
 
-    public Iterable<UniversityItemDto> filterItems(SearchItem searchItem) {
+    public Iterable<UniversityItemDto> filterItems(SearchData searchData) {
         Query dbQuery = new Query();
 
-        Optional.ofNullable(searchItem.getCities())
+        Optional.ofNullable(searchData.getCities())
                 .filter(cities -> !cities.isEmpty())
                 .ifPresent(cities -> dbQuery.addCriteria(Criteria.where("city").in(cities)));
 
-        Optional.ofNullable(searchItem.getTitle())
+        Optional.ofNullable(searchData.getTitle())
                 .ifPresent(title -> dbQuery.addCriteria(Criteria.where("title").is(title)));
 
         return mongoTemplate.find(dbQuery, UniversityItem.class)
                 .stream()
-                .map((UniversityItem university) -> mapToUniversityItemDto(university,searchItem))
+                .map((UniversityItem university) -> mapToUniversityItemDto(university, searchData))
                 .filter(university -> university.matchingInterests() > 0)
                 .sorted(Comparator.comparingInt(UniversityItemDto::matchingInterests).reversed())
                 .collect(Collectors.toList());
@@ -83,8 +84,52 @@ public class ItemService {
         universityItemRepository.deleteById(id);
     }
 
-    private UniversityItemDto mapToUniversityItemDto(UniversityItem university, SearchItem searchItem) {
-        int matchingInterests = getMatchingInterestCount(university.getInterests(), searchItem.getInterests());
+    public List<SearchItem> getAllCities() {
+        List<SearchItem> cities = new ArrayList<>();
+
+        Iterable<UniversityItem> universityItems = universityItemRepository.findAll();
+        Set<String> cityNames = new HashSet<>();
+        for(UniversityItem university : universityItems) {
+            cityNames.add(university.getCity());
+        }
+
+        int id = 1;
+        for (String cityName : cityNames) {
+            SearchItem searchItem = new SearchItem();
+            searchItem.setId(id++);
+            searchItem.setName(cityName);
+            searchItem.setType("city");
+            cities.add(searchItem);
+        }
+
+        return cities;
+    }
+
+    public List<SearchItem> getAllInterests() {
+        List<SearchItem> interests = new ArrayList<>();
+
+        Iterable<UniversityItem> universityItems = universityItemRepository.findAll();
+        Set<String> interestsNames = new HashSet<>();
+        for(UniversityItem university : universityItems) {
+            for(String interest : university.getInterests()) {
+                interestsNames.add(interest.toLowerCase());
+            }
+        }
+
+        int id = 1;
+        for (String interestName : interestsNames) {
+            SearchItem interest = new SearchItem();
+            interest.setId(id++);
+            interest.setName(interestName);
+            interest.setType("interest");
+            interests.add(interest);
+        }
+
+        return interests;
+    }
+
+    private UniversityItemDto mapToUniversityItemDto(UniversityItem university, SearchData searchData) {
+        int matchingInterests = getMatchingInterestCount(university.getInterests(), searchData.getInterests());
 
         return new UniversityItemDto(
                 university.getId(),

@@ -5,8 +5,20 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="c5c49085-2474-44fd-85e7-333becfcf646" name="Changes" comment="moved business logic from authcontroller to service, removed unused imports">
+      <change afterPath="$PROJECT_DIR$/.idea/discord.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/ug/unigo/UniGo/model/SearchData.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ug/unigo/UniGo/config/SecurityConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ug/unigo/UniGo/config/SecurityConfig.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ug/unigo/UniGo/controller/UniversityController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ug/unigo/UniGo/controller/UniversityController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ug/unigo/UniGo/model/SearchItem.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ug/unigo/UniGo/model/SearchItem.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ug/unigo/UniGo/model/UniversityItem.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ug/unigo/UniGo/model/UniversityItem.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/ug/unigo/UniGo/service/ItemService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ug/unigo/UniGo/service/ItemService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/ug/unigo/UniGo/UniversityItemValidationTests.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/ug/unigo/UniGo/UniversityItemValidationTests.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/ug/unigo/UniGo/controller/UniversityController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/ug/unigo/UniGo/controller/UniversityController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/ug/unigo/UniGo/model/SearchItem.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/ug/unigo/UniGo/model/SearchItem.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/ug/unigo/UniGo/model/UniversityItem.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/ug/unigo/UniGo/model/UniversityItem.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/ug/unigo/UniGo/service/ItemService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/ug/unigo/UniGo/service/ItemService.class" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -59,7 +71,7 @@
     &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
     &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
     &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
-    &quot;last_opened_file_path&quot;: &quot;C:/Users/Lukasz/IdeaProjects/UNIGO/Backend&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/lukie/IdeaProjects/UNIGO/Backend&quot;,
     &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
     &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
     &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
@@ -158,6 +170,8 @@
       <workItem from="1683570834009" duration="270000" />
       <workItem from="1683656134417" duration="60000" />
       <workItem from="1684332184411" duration="608000" />
+      <workItem from="1684704640610" duration="4928000" />
+      <workItem from="1684770538422" duration="513000" />
     </task>
     <task id="LOCAL-00001" summary="added mongoDB connection">
       <created>1682180335791</created>
