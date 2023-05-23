@@ -1,16 +1,15 @@
 "use client";
 /// External Libraries
 import { useContext, useState } from "react";
-
 import { ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
+
 /// Components
 import Divider from "./SearchComponents/UI/Divider";
 import SearchBar from "./SearchComponents/SearchBar";
-import FormButtonsContainer from "./SearchComponents/UI/FormButtonsContainer";
+import FormButtonsContainer from "./FormButtonsContainer";
 import Submit from "./SearchComponents/UI/buttons/Submit";
 import Loader from "./SearchComponents/UI/Loader";
-import ChoosenElement from "./SearchComponents/UI/ChoosenElement";
 
 /// Data
 import cities from "@/Frontend/test-data/cities.json";

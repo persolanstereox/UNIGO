@@ -2,21 +2,10 @@
 // import data from "test-data/cities.json";
 
 function List(props) {
-  // const GiveButtonValue = (e) => {
-  //   e.preventDefault();
-  //   e.target.closest("ul").previousSibling.value = e.target.value;
-  //   console.log(e.target.closest("ul").previousSibling);
-  //   console.log(e.target.closest("ul").previousSibling.value);
-
-  //   props.removeList();
-  // };
-  // const stateHandler = () => {
-  //   props.focusState(true);
-  // }
-
+  
   const filterSearches = props.data.filter((search) => {
     if (props.searchName === "") {
-      // return search;
+      
       return;
     } else {
       return search.name.toLowerCase().includes(props.searchName);
@@ -30,7 +19,7 @@ function List(props) {
           {filterSearches.map((search) => (
             <li className="p-1.5 hover:bg-sky-700" key={search.id}>
               <button
-                // onClick={props.listButtonsFunctionality}
+                
                 onClick={(e) => {
                   props.listButtonsFunctionality(e)
                 }}

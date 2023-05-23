@@ -13,7 +13,7 @@ function SocialMedia() {
             className="max-[700px]:w-5 max-[700px]:h-5"
           />
         </button>
-        <button className="flex justify-center bg-blue-500 hover:bg-pink-700 text-white font-bold py-4 px-4 rounded-full mx-4">
+        <button className="flex justify-center bg-blue-500 hover:bg-pink-700 text-white font-bold py-4 px-4 rounded-full ml-4 mb-3">
           <Image
             src="/instagram-icon.svg"
             width={20}
@@ -22,6 +22,7 @@ function SocialMedia() {
             className="max-[700px]:w-5 max-[700px]:h-5"
           />
         </button>
+       
       </div>
       <span className="mx-4">Follow us</span>
     </div>

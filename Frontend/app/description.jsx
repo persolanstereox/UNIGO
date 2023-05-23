@@ -25,27 +25,3 @@ function Description() {
 }
 
 export default Description;
-
-{
-  /* <section className="relative h-2/4 z-10">
-      <div className="ml-[10%]">
-        <span className="text-sky-600 text-2xl">
-          Combine your
-          <br />
-          <b className="underline ml-20">Interests</b>,{" "}
-          <b className="underline">passions</b> and{" "}
-          <b className="underline">skills</b>
-          <br />
-          <div className="ml-56">Find the best place to study</div>
-        </span>
-      </div>
-      <div>
-        <div className="ml-[14%] mt-12">
-          <span>
-            Start learning the easy way, with Unigo <br />
-            Find most accurate field where you can grow.
-          </span>
-        </div>
-      </div>
-    </section> */
-}

@@ -1,16 +1,34 @@
 const ResultCard = (props) => {
+  const getResultsColor = (matchLevel) => {
+    if (matchLevel === 1) {
+      return "bg-red-600";
+    } else if (matchLevel === 2) {
+      return "bg-amber-300";
+    } else if (matchLevel === 3) {
+      return "bg-teal-400";
+    } else if (matchLevel === 4) {
+      return "bg-indigo-500";
+    } else {
+      return "bg-green-600";
+    }
+  };
+
   return (
     <div className="m-4  rounded-lg shadow-lg">
       <div className="w-80 p-4">
-        <div className="shadow-lg shadow-cyan-500/50">
+        <div className="flex justify-center shadow-lg shadow-cyan-500/50">
           <img src={props.data.logoURL} alt="Logo of the University" />
         </div>
       </div>
       <h3 className="text-lg font-bold">{props.data.university}</h3>
       <h4 className="text-sm text-gray-500">{props.data.fieldOfStudy}</h4>
-      <div className="flex items-center justify-center mt-3">
-        <div className=" rounded-full p-1 bg-cyan-500 font-medium">
-          <span className="mx-3">
+      <div className="flex items-center justify-center	mt-3">
+        <div
+          className={` rounded-full p-1 bg-sky-300  font-medium ${getResultsColor(
+            props.data.matchingInterests
+          )}`}
+        >
+          <span className={`mx-3 text-white`}>
             {props.data.matchingInterests === 1
               ? "Very poor match"
               : props.data.matchingInterests === 2
