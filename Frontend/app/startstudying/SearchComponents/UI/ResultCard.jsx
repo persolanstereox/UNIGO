@@ -3,7 +3,7 @@ const ResultCard = (props) => {
     if (matchLevel === 1) {
       return "bg-red-600";
     } else if (matchLevel === 2) {
-      return "bg-amber-300";
+      return "bg-yellow-300";
     } else if (matchLevel === 3) {
       return "bg-teal-400";
     } else if (matchLevel === 4) {
@@ -46,7 +46,7 @@ const ResultCard = (props) => {
       </div>
       <div className="flex justify-between items-center px-3 my-5">
         <span></span>
-        <h3 className="text-lg font-bold">Visit Website</h3>
+        <a href={props.data.website} className="text-lg font-bold">Visit Website</a>
         <a
           href={props.data.website}
           className="flex items-center justify-center relative right-2 bg-white  rounded-full w-11 h-11 shadow-lg "

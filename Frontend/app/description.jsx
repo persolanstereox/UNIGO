@@ -1,6 +1,6 @@
 function Description() {
   return (
-    <section className="relative h-2/4 z-10 max-[700px]:mt-14% max-[700px]:text-center ">
+    <section className="relative h-2/4 z-10 max-[700px]:mt-14% max-[700px]:text-center mt-4 ">
       <div className="ml-[10%] text-sky-600 text-2xl max-[700px]:text-xl max-[700px]:ml-0 ">
         <span className="">Combine your</span>
 
