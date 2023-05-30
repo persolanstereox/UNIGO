@@ -1,3 +1,17 @@
+## Frontend Installation
+
+
+
+```bash
+npm install
+```
+## Frontend Running app
+
+
+
+```bash
+npm run dev
+```
 # UNIGO
 
 Platforma ułatwiająca proces rekrutacji na studia. Pomaga w doborze odpowiedniego kierunku w oparciu o zainteresowania użytkownika oraz standaryzuje proces zapisywania się na studia.
