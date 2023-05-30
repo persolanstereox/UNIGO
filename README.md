@@ -1,6 +1,3 @@
-
-
-
 # UNIGO
 
 Platforma ułatwiająca proces rekrutacji na studia. Pomaga w doborze odpowiedniego kierunku w oparciu o zainteresowania użytkownika oraz standaryzuje proces zapisywania się na studia.
@@ -15,27 +12,33 @@ Autorzy:
 
 Warunki licencyjne do oprogramowania wytworzonego przez grupę: **Licencja wyłącznej własności**
 
-# JAK URUCHOMIĆ PROJEKT
+## URUCHAMIANIE PROJEKTU
 
-**Do uruchomienia projektu potrzeba osobnego otworzenia klienta oraz serwera**
+**Aby uruchomić ten projekt, konieczne jest otwarcie klienta i serwera osobno.**
 
-## Backend
-1. Otwórz swoje IDE (np. Intellij) następnie otwórz jako projekt folder backend
-2. Upewnij się, że posiadasz Java w wersji 20 oraz Maven
-3. Uruchom aplikację przez plik przez klasę /src/main/java/ug/unigo/UniGo/UniGoApplication.java
+### Backend
+1. Otwórz swoje IDE (np. IntelliJ) i zaimportuj folder backend jako projekt.
+2. Upewnij się, że masz zainstalowaną Javę w wersji 20 oraz narzędzie Maven.
+3. Uruchom aplikację, otwierając plik `src/main/java/ug/unigo/UniGo/UniGoApplication.java`.
 
-## Frontend 
-1. Otwórz folder frontend w edytorze (np. Visual Studio Code)
-2. Otwórz terminal w edytorze i wykonaj następujące komendy:
+### Frontend
+1. Otwórz folder frontend w swoim edytorze (np. Visual Studio Code).
+2. Otwórz terminal w swoim edytorze i wykonaj następujące polecenia:
 
 ```bash
+cd frontend
 npm install
 ```
 
 ```bash
 npm run dev
 ```
+3. Otwórz http://localhost:3000/ w swojej przeglądarce
 
+
+### Mockup
+
+Demo aplikacji dostępne: https://www.figma.com/file/DXO6YIiAWThnNwzyFiJRuG/Unigo?type=design&t=ynhpIGtk8nhZ6rBp-1
 
 ## Technologie
 - Java 20
