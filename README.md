@@ -1,17 +1,6 @@
-## Frontend Installation
 
 
 
-```bash
-npm install
-```
-## Frontend Running app
-
-
-
-```bash
-npm run dev
-```
 # UNIGO
 
 Platforma ułatwiająca proces rekrutacji na studia. Pomaga w doborze odpowiedniego kierunku w oparciu o zainteresowania użytkownika oraz standaryzuje proces zapisywania się na studia.
@@ -25,6 +14,28 @@ Autorzy:
 - Piotr Jemielita
 
 Warunki licencyjne do oprogramowania wytworzonego przez grupę: **Licencja wyłącznej własności**
+
+# JAK URUCHOMIĆ PROJEKT
+
+**Do uruchomienia projektu potrzeba osobnego otworzenia klienta oraz serwera**
+
+## Backend
+1. Otwórz swoje IDE (np. Intellij) następnie otwórz jako projekt folder backend
+2. Upewnij się, że posiadasz Java w wersji 20 oraz Maven
+3. Uruchom aplikację przez plik przez klasę /src/main/java/ug/unigo/UniGo/UniGoApplication.java
+
+## Frontend 
+1. Otwórz folder frontend w edytorze (np. Visual Studio Code)
+2. Otwórz terminal w edytorze i wykonaj następujące komendy:
+
+```bash
+npm install
+```
+
+```bash
+npm run dev
+```
+
 
 ## Technologie
 - Java 20
