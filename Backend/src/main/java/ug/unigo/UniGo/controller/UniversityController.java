@@ -4,6 +4,7 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 import ug.unigo.UniGo.model.SearchItem;
+import ug.unigo.UniGo.model.SearchData;
 import ug.unigo.UniGo.model.UniversityItem;
 import ug.unigo.UniGo.model.UniversityItemDto;
 import ug.unigo.UniGo.service.ItemService;
@@ -35,9 +36,9 @@ public class UniversityController {
         return ResponseEntity.ok(universityItem);
     }
 
-    @GetMapping("/universities/filter")
-    public Iterable<UniversityItemDto> filterUniversities(@RequestBody SearchItem searchItem) {
-        return universityService.filterItems(searchItem);
+    @PostMapping("/universities/filter")
+    public Iterable<UniversityItemDto> filterUniversities(@RequestBody SearchData searchData) {
+        return universityService.filterItems(searchData);
     }
 
     @PostMapping("/universities")
@@ -59,5 +60,21 @@ public class UniversityController {
             return new ResponseEntity<>(HttpStatus.NOT_FOUND);
         }
         return ResponseEntity.ok(updatedUniversityItem);
+    }
+
+    @GetMapping("/cities")
+    public List<SearchItem> getAllCities() {
+        if(universityService.getAllCities().isEmpty())
+            return null;
+
+        return universityService.getAllCities();
+    }
+
+    @GetMapping("/interests")
+    public List<SearchItem> getAllInterests() {
+        if(universityService.getAllInterests().isEmpty())
+            return null;
+
+        return universityService.getAllInterests();
     }
 }

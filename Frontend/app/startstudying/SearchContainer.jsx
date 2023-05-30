@@ -1,70 +1,77 @@
 "use client";
-import Divider from "./SearchComponents/divider";
+/// External Libraries
+import { useContext, useState } from "react";
+import { ToastContainer } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
+
+/// Components
+import Divider from "./SearchComponents/UI/Divider";
 import SearchBar from "./SearchComponents/SearchBar";
-import TitleButtonContainer from "./SearchComponents/buttons/TitleButtonsContainer";
-import EnglishLevelButtonContainer from "./SearchComponents/buttons/EnglishLevelButtonsContainer";
-import Submit from "./SearchComponents/buttons/Submit";
+import FormButtonsContainer from "./FormButtonsContainer";
+import Submit from "./SearchComponents/UI/buttons/Submit";
+import Loader from "./SearchComponents/UI/Loader";
+
+/// Data
 import cities from "@/Frontend/test-data/cities.json";
-import subjects from "@/Frontend/test-data/subjects.json";
-import { useState } from "react";
+import interests from "@/Frontend/test-data/subjects.json";
+import titles from "@/Frontend/test-data/titles.json";
+import FetchContext from "./FetchContext";
 
 const SearchContainer = () => {
-  const [search, setSearch] = useState("");
+  const [citiesSearch, setCitiesSearch] = useState("");
+  const [interestsSearch, setInterestsSearch] = useState("");
+  const [citiesListFocus, setCitiesFocus] = useState(false);
+  const [subjectsListFocus, setSubjectsFocus] = useState(false);
+  const [activeButton, setActiveButton] = useState(null);
 
-  const [focus, setFocus] = useState(false);
-
-  const handle = (h) => {
-    setFocus(h)
-  }
-
+  const FetchCtx = useContext(FetchContext);
 
   const [formData, setFormData] = useState({
-    cities: "",
-    subjects: "",
+    cities: [],
+    interests: [],
     title: "",
-    engLevel: "",
   });
 
-  const handleFormData = (e) => {
-    setFormData({
-      ...formData,
-      [e.target.name]: e.target.value.trim(),
-    });
-
-    setSearch(e.target.value.toLowerCase());
-
-    console.log(e.target.value);
+  const handleCitiesInput = (e) => {
+    setCitiesSearch(e.target.value.toLowerCase());
   };
-  
-  // const handleFocus = () => {
-  //   if (!focus) {
-  //     setFocus(true);
-  //   } else {
-  //     setFocus(false);
-  //   }
-  // };
 
-  
+  const handleInterestsInput = (e) => {
+    setInterestsSearch(e.target.value.toLowerCase());
+  };
+
   const handleFormDataByButtons = (e) => {
+    e.stopPropagation();
     e.preventDefault();
-    
-    console.log(e.target)
-    let input = e.target.closest("ul").previousSibling;
+
+    let input = e.target.closest("ul").previousSibling.lastElementChild;
     input.value = e.target.value;
 
-    setFormData({
-      ...formData,
-      [input.name]: e.target.value,
+    if ([...formData[input.name]].length < 5) {
+      setFormData({
+        ...formData,
+        [input.name]: new Set([...formData[input.name], e.target.value]),
+      });
+    }
+
+    input.value = "";
+
+    console.log(formData);
+    console.log(formData[input.name]);
+  };
+
+  const removeChoosenElement = (e) => {
+    e.preventDefault();
+    let input = e.target.closest("div").parentElement.nextElementSibling;
+    let choosenElementValue = e.target.parentElement.value;
+
+    setFormData((prevFormData) => {
+      const updatedData = { ...prevFormData };
+      if (updatedData[input.name].has(choosenElementValue)) {
+        updatedData[input.name].delete(choosenElementValue);
+      }
+      return updatedData;
     });
-
-    // setFocus(true)
-
-
-    // handleFocus();
-
-
-    // console.log(focus)
-    // props.removeList();
   };
 
   const handleButtonsValue = (e) => {
@@ -75,50 +82,57 @@ const SearchContainer = () => {
       ...formData,
       [button.name]: button.value,
     });
-  };
 
-  const getFormData = (e) => {
-    e.preventDefault();
-
-    console.log(e.target.closest("form"));
-    console.log(formData);
+    setActiveButton(button.value);
   };
 
   return (
-    <div>
-      <form>
+    <>
+      <form className=" ">
         <Divider />
         <SearchBar
           data={cities}
+          formData={formData.cities}
+          removeChoosenElement={removeChoosenElement}
           label={"Cities"}
           id={"cities"}
-          onChange={handleFormData}
+          onChange={handleCitiesInput}
           listButtonsFunctionality={handleFormDataByButtons}
-          // focus={focus}
-          // settingFocus={handleFocus}
-          test={handle}
-          search={search}
+          focusState={setCitiesFocus}
+          focus={citiesListFocus}
+          search={citiesSearch}
         />
         <Divider />
-        <TitleButtonContainer onClick={handleButtonsValue} />
+        <FormButtonsContainer
+          onClick={handleButtonsValue}
+          data={titles}
+          active={activeButton}
+        />
         <Divider />
         <SearchBar
-          data={subjects}
+          data={interests}
+          formData={formData.interests}
+          removeChoosenElement={removeChoosenElement}
           label={"Desired study subjects"}
-          id={"subjects"}
-          onChange={handleFormData}
+          id={"interests"}
+          onChange={handleInterestsInput}
           listButtonsFunctionality={handleFormDataByButtons}
-          test={handle}
-          // focus={focus}
-          // settingFocus={handleFocus}
-          search={search}
+          focusState={setSubjectsFocus}
+          focus={subjectsListFocus}
+          search={interestsSearch}
         />
         <Divider />
-        <EnglishLevelButtonContainer onClick={handleButtonsValue} />
-        <Divider />
-        <Submit onClick={getFormData} />
+        <Submit
+          onClick={(e) => {
+            e.preventDefault();
+            FetchCtx.handleSubmit(formData);
+          }}
+        />
       </form>
-    </div>
+
+      {FetchCtx.isLoading && <Loader />}
+      <ToastContainer />
+    </>
   );
 };
 export default SearchContainer;

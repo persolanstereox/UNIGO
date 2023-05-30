@@ -1,16 +1,17 @@
-import MainDivider from "./MainDivider";
-import SearchContainer from "./SearchContainer";
+"use client";
+
+import Sections from "./Sections";
+
+import { FetchContextProvider } from "./FetchContext";
 
 function StartStudying() {
   return (
-    <main className="h-3/4">
-      <section className="container mx-auto px-4  h-fit max-h-full max-w-screen-lg ">
-          <MainDivider/>
-          <SearchContainer/>
-      </section>
-    </main>
+    <FetchContextProvider>
+      <main>
+        <Sections />
+      </main>
+    </FetchContextProvider>
   );
 }
 
 export default StartStudying;
-// border-4 border-indigo-500/100

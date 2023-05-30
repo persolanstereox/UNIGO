@@ -1,22 +1,22 @@
 function Description() {
   return (
-    <section className="h-2/4">
-      <div className="ml-32">
-        <span className="text-sky-600 text-2xl">
-          Combine your
-          <br />
-          <b className="underline ml-20">Interests</b>,{" "}
+    <section className="relative h-2/4 z-10 max-[700px]:mt-14% max-[700px]:text-center mt-4 ">
+      <div className="ml-[10%] text-sky-600 text-2xl max-[700px]:text-xl max-[700px]:ml-0 ">
+        <span className="">Combine your</span>
+
+        <p>
+          <b className="underline ml-20 max-[700px]:ml-0">Interests</b>,{" "}
           <b className="underline">passions</b> and{" "}
           <b className="underline">skills</b>
-          <br />
-          <div className="ml-56">Find the best place to study</div>
-        </span>
+        </p>
+
+        <p className="ml-56 max-[700px]:ml-0">Find the best place to study</p>
       </div>
       <div>
-        <div className="ml-52 mt-12">
+        <div className="ml-[14%] mt-12 max-[700px]:ml-0">
           <span>
-            Start learning the easy way, with Unigo <br />
-            Find most accurate field where you can grow.
+            <p>Start learning the easy way, with Unigo</p>
+            <p>Find most accurate field where you can grow.</p>
           </span>
         </div>
       </div>

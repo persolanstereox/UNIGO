@@ -2,15 +2,23 @@
   "titles": [
     {
       "id": 1,
-      "title": "Bachelor"
+      "title": "Bachelor",
+      "type": "title"
     },
     {
       "id": 2,
-      "title": "Master"
+      "title": "Engineer",
+      "type": "title"
     },
     {
       "id": 3,
-      "title": "Ph.D"
+      "title": "Master",
+      "type": "title"
+    },
+    {
+      "id": 4,
+      "title": "Ph.D",
+      "type": "title"
     }
   ]
 }

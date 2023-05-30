@@ -18,7 +18,7 @@ public class UniversityItem {
     @NotEmpty(message = "University name is required")
     private String university;
 
-    @NotEmpty(message = "City is required")
+    @NotEmpty(message = "SearchItem is required")
     private String city;
 
     @NotEmpty(message = "Faculty is required")

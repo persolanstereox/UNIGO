@@ -2,7 +2,7 @@ import Link from "next/link";
 
 function MainButton() {
   return (
-    <div>
+    <div className="z-10 max-[700px]:flex max-[700px]:flex-col">
       <Link href="/startstudying">
         <button className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded m-2">Start now</button>
       </Link>
