@@ -82,3 +82,7 @@ Demo aplikacji dostępne: https://www.figma.com/file/DXO6YIiAWThnNwzyFiJRuG/Unig
 3. **Dostępność**
    - Opis: Aplikacja powinna posiadać motyw powiększonego kontrastu, aby osoby niedowidzące miały możliwość korzystania z aplikacji.
    - Priorytet: 3
+
+## Preview
+![screen1](https://github.com/cornelisp/UNIGO/assets/96263729/3cc5ff88-2722-4386-9afe-0b15f26f54a2)
+![screen2](https://github.com/cornelisp/UNIGO/assets/96263729/8bd90237-a052-4f49-a2a4-33688191f932)
